@@ -126,7 +126,7 @@ body {
 .nav-list {
     display: flex;
     list-style: none;
-    gap: clamp(15px, 2vw, 25px); /* Responsive gap */
+
 }
 
 .nav-item {
@@ -137,7 +137,6 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    font-size: clamp(0.9rem, 1.5vw, 1rem); /* Tamaño de fuente responsive */
     transition: var(--transition);
     padding: 8px 0;
     position: relative;

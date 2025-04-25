@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratorio Clínico A-maya Lab</title>
 
+    <!-- Preconexiones para mejorar rendimiento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
     <!-- Fuentes y iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -15,9 +20,7 @@
     <link rel="stylesheet" href="css/seccion2.css">
     <link rel="stylesheet" href="css/seccion3.css">
     <link rel="stylesheet" href="css/adn.css">
-    <link rel="stylesheet" href="servicios/servicios.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <header class="header">
@@ -26,22 +29,22 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="index.html">
-                        <img src="img/logohe.svg" alt="Logo Laboratorio A-maya Lab - Especialistas en análisis clínicos" loading="lazy" width="200" height="100">
+                        <img src="/imagen.img/logohe.svg" alt="Logo Laboratorio A-maya Lab - Especialistas en análisis clínicos" loading="lazy" width="200" height="100">
                     </a>
                 </div>
                 
                 <!-- Navegación principal -->
-                <nav class="navbar" aria-label="Navegación principal">
+                <nav class="navbar" aria-label="Navegación principal" id="navbar">
                     <ul class="nav-list">
                         <li class="nav-item"><a href="index.html" class="nav-link active"><strong>Inicio</strong></a></li>
-                        <li class="nav-item"><a href="servicios/servicio.html" class="nav-link"><strong>Servicios</strong></a></li>
-                        <li class="nav-item"><a href="nosotros/nosotros.html" class="nav-link"><strong>Nosotros</strong></a></li>
-                        <li class="nav-item"><a href="contactos/contactos.html" class="nav-link"><strong>Contacto</strong></a></li>
+                        <li class="nav-item"><a href="servicios.html" class="nav-link"><strong>Servicios</strong></a></li>
+                        <li class="nav-item"><a href="nosotros.html" class="nav-link"><strong>Nosotros</strong></a></li>
+                        <li class="nav-item"><a href="contacto.html" class="nav-link"><strong>Contacto</strong></a></li>
                     </ul>
                 </nav>
                 
                 <!-- Botón menú móvil -->
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú móvil" aria-expanded="false">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú móvil" aria-expanded="false" aria-controls="navbar">
                     <span class="bar" aria-hidden="true"></span>
                     <span class="bar" aria-hidden="true"></span>
                     <span class="bar" aria-hidden="true"></span>
@@ -50,225 +53,227 @@
         </div>
     </header>
 
-    <section class="lab-hero">
-        <!-- Slides -->
-        <div class="lab-slides">
-            <!-- Slide 1 -->
-            <div class="lab-slide active" data-slide="1">
-                <div class="slide-overlay"></div>
-                <div class="slide-container">
-                    <div class="slide-content">
-                        <h1>Resultados <span class="highlight">Precisos</span></h1>
-                        <ul class="lab-features">
-                            <li><i class="fas fa-check-circle"></i> Resultados en 4-24 horas</li>
-                            <li><i class="fas fa-check-circle"></i> Equipos automatizados</li>
-                            <li><i class="fas fa-check-circle"></i> Control de calidad</li>
-                        </ul>
-                        <div class="cta-buttons">
-                            <a href="contactos/contactos.html" class="cta-btn primary">Agendar Cita <i class="fas fa-arrow-right"></i></a>
-                            <a href="servicios/servicio.html" class="cta-btn secondary">Nuestros Servicios</a>
+    <main>
+        <section class="lab-hero">
+            <!-- Slides -->
+            <div class="lab-slides">
+                <!-- Slide 1 -->
+                <div class="lab-slide active" data-slide="1">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-container">
+                        <div class="slide-content">
+                            <h1>Resultados <span class="highlight">Precisos</span></h1>
+                            <ul class="lab-features">
+                                <li><i class="fas fa-check-circle"></i> Resultados en 4-24 horas</li>
+                                <li><i class="fas fa-check-circle"></i> Equipos automatizados</li>
+                                <li><i class="fas fa-check-circle"></i> Control de calidad</li>
+                            </ul>
+                            <div class="cta-buttons">
+                                <a href="contactos/contactos.html" class="cta-btn primary">Agendar Cita <i class="fas fa-arrow-right"></i></a>
+                                <a href="servicios/servicio.html" class="cta-btn secondary">Nuestros Servicios</a>
+                            </div>
+                        </div>
+                        <div class="slide-image">
+                            <img src="img/8.jpg" alt="Tecnólogo realizando pruebas en equipo automatizado de laboratorio" loading="lazy" width="600" height="400">
                         </div>
                     </div>
-                    <div class="slide-image">
-                        <img src="img/8.jpg" alt="Tecnólogo realizando pruebas en equipo automatizado de laboratorio" loading="lazy">
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="lab-slide" data-slide="2">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-container">
+                        <div class="slide-content">
+                            <h1>Análisis <span class="highlight">Clínicos</span></h1>
+                            <ul class="lab-features">
+                                <li><i class="fas fa-check-circle"></i> Hematología</li>
+                                <li><i class="fas fa-check-circle"></i> Bioquímica</li>
+                                <li><i class="fas fa-check-circle"></i> Microbiología</li>
+                            </ul>
+                            <div class="cta-buttons">
+                                <a href="contactos/contactos.html" class="cta-btn primary">Agendar Cita <i class="fas fa-arrow-right"></i></a>
+                                <a href="servicios/servicio.html" class="cta-btn secondary">Ver Análisis</a>
+                            </div>
+                        </div>
+                        <div class="slide-image">
+                            <img src="img/confiables.png" alt="Médico revisando resultados de análisis clínicos en microscopio" loading="lazy" width="600" height="400">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="lab-slide" data-slide="3">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-container">
+                        <div class="slide-content">
+                            <h1>Resultados <span class="highlight">Confiables</span></h1>
+                            <ul class="lab-features">
+                                <li><i class="fas fa-check-circle"></i> Informes detallados</li>
+                                <li><i class="fas fa-check-circle"></i> Resultados verificados</li>
+                                <li><i class="fas fa-check-circle"></i> Precisión garantizada</li>
+                            </ul>
+                            <div class="cta-buttons">
+                                <a href="servicios/servicio.html#resultados" class="cta-btn primary">Ver Resultados <i class="fas fa-arrow-right"></i></a>
+                                <a href="contactos/contactos.html#telemedicina" class="cta-btn secondary">Consulta en Línea</a>
+                            </div>
+                        </div>
+                        <div class="slide-image">
+                            <img src="img/resultado-confiable.png" alt="Paciente revisando resultados digitales en tablet" loading="lazy" width="600" height="400">
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Slide 2 -->
-            <div class="lab-slide" data-slide="2">
-                <div class="slide-overlay"></div>
-                <div class="slide-container">
-                    <div class="slide-content">
-                        <h1>Análisis <span class="highlight">Clínicos</span></h1>
-                        <ul class="lab-features">
-                            <li><i class="fas fa-check-circle"></i> Hematología</li>
-                            <li><i class="fas fa-check-circle"></i> Bioquímica</li>
-                            <li><i class="fas fa-check-circle"></i> Microbiología</li>
-                        </ul>
-                        <div class="cta-buttons">
-                            <a href="#genetica" class="cta-btn primary">Agendar Cita <i class="fas fa-arrow-right"></i></a>
-                            <a href="#especialistas" class="cta-btn secondary">Análisis</a>
-                        </div>
-                    </div>
-                    <div class="slide-image">
-                        <img src="img/confiables.png" alt="Médico revisando resultados de análisis clínicos en microscopio" loading="lazy">
-                    </div>
-                </div>
+            <!-- Controles -->
+            <div class="slider-controls">
+                <button class="slider-prev" aria-label="Slide anterior"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots"></div>
+                <button class="slider-next" aria-label="Slide siguiente"><i class="fas fa-chevron-right"></i></button>
             </div>
             
-            <!-- Slide 3 -->
-            <div class="lab-slide" data-slide="3">
-                <div class="slide-overlay"></div>
-                <div class="slide-container">
-                    <div class="slide-content">
-                        <h1>Resultados <span class="highlight">Confiables</span></h1>
-                        <ul class="lab-features">
-                            <li><i class="fas fa-check-circle"></i> Informes detallados</li>
-                            <li><i class="fas fa-check-circle"></i> Resultados verificados</li>
-                            <li><i class="fas fa-check-circle"></i> Precisión garantizada</li>
-                        </ul>
-                        <div class="cta-buttons">
-                            <a href="resultados/result.html" class="cta-btn primary">Ver Resultados <i class="fas fa-arrow-right"></i></a>
-                            <a href="#telemedicina" class="cta-btn secondary">Consulta en Línea</a>
-                        </div>
-                    </div>
-                    <div class="slide-image">
-                        <img src="img/resultado-confiable.png" alt="Paciente revisando resultados digitales en tablet" loading="lazy">
+            <!-- Certificaciones -->
+            <div class="certifications">
+                <div class="container">
+                    <p><strong>Convenios:</strong></p>
+                    <div class="cert-logos">
+                        <img src="img/bermanlab.svg" alt="BermanLab - Laboratorios asociados" loading="lazy" width="120" height="60">
+                        <img src="img/synlab.svg" alt="Synlab - Red internacional de laboratorios" loading="lazy" width="120" height="60">
+                        <img src="img/biomedica.svg" alt="Biomédica - Especialistas en diagnóstico clínico" loading="lazy" width="120" height="60">
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Controles -->
-        <div class="slider-controls">
-            <button class="slider-prev" aria-label="Slide anterior"><i class="fas fa-chevron-left"></i></button>
-            <div class="slider-dots"></div>
-            <button class="slider-next" aria-label="Slide siguiente"><i class="fas fa-chevron-right"></i></button>
-        </div>
-        
-        <!-- Certificaciones -->
-        <div class="certifications">
+        </section>
+
+        <section class="services" id="servicios">
             <div class="container">
-                <p><strong>Convenios:</strong></p>
-                <div class="cert-logos">
-                    <img src="img/bermanlab.svg" alt="BermanLab - Laboratorios asociados" loading="lazy">
-                    <img src="img/synlab.svg" alt="Synlab - Red internacional de laboratorios" loading="lazy">
-                    <img src="img/biomedica.svg" alt="Biomédica - Especialistas en diagnóstico clínico" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="services" id="servicios">
-        <div class="container">
-            <h2 class="section-title">Nuestros Servicios Especializados</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3>Hematología</h3>
-                    <p>Análisis completo de sangre, coagulación, hemogramas y estudios de células sanguíneas con tecnología automatizada.</p>
-                    <ul>
-                        <li>Hemograma completo</li>
-                        <li>Estudios de coagulación</li>
-                        <li>Velocidad de sedimentación</li>
-                        <li>Frotis sanguíneo</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3>Bioquímica</h3>
-                    <p>Análisis químicos de fluidos corporales para evaluar función orgánica, metabólica y estado nutricional.</p>
-                    <ul>
-                        <li>Perfil lipídico</li>
-                        <li>Función hepática y renal</li>
-                        <li>Glucosa y hemoglobina glicosilada</li>
-                        <li>Electrolitos y gases sanguíneos</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3>Microbiología</h3>
-                    <p>Identificación de microorganismos patógenos y pruebas de sensibilidad a antimicrobianos.</p>
-                    <ul>
-                        <li>Cultivos bacteriológicos</li>
-                        <li>Antibiogramas</li>
-                        <li>Parasitología</li>
-                        <li>Micología</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-virus"></i>
-                    </div>
-                    <h3>Inmunología</h3>
-                    <p>Estudios del sistema inmunológico, alergias, enfermedades autoinmunes y serologías.</p>
-                    <ul>
-                        <li>Pruebas de alergia</li>
-                        <li>Marcadores tumorales</li>
-                        <li>Enfermedades autoinmunes</li>
-                        <li>Serologías infecciosas</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="paternity-hero">
-        <div class="paternity-container">
-            <div class="paternity-content">
-                <h1>Prueba de <span class="highlight">Paternidad</span> por ADN</h1>
-                <h2>Resultados confiables con exactitud del 99.99%</h2>
-                
-                <div class="paternity-features">
-                    <div class="feature-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Privacidad Garantizada</h3>
-                        <p>Muestras procesadas de forma confidencial y segura</p>
+                <h2 class="section-title">Nuestros Servicios Especializados</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Hematología</h3>
+                        <p>Análisis completo de sangre, coagulación, hemogramas y estudios de células sanguíneas con tecnología automatizada.</p>
+                        <ul>
+                            <li>Hemograma completo</li>
+                            <li>Estudios de coagulación</li>
+                            <li>Velocidad de sedimentación</li>
+                            <li>Frotis sanguíneo</li>
+                        </ul>
                     </div>
                     
-                    <div class="feature-card">
-                        <i class="fas fa-home"></i>
-                        <h3>Kit para Casa</h3>
-                        <p>Toma de muestras indolora en la comodidad de tu hogar</p>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Bioquímica</h3>
+                        <p>Análisis químicos de fluidos corporales para evaluar función orgánica, metabólica y estado nutricional.</p>
+                        <ul>
+                            <li>Perfil lipídico</li>
+                            <li>Función hepática y renal</li>
+                            <li>Glucosa y hemoglobina glicosilada</li>
+                            <li>Electrolitos y gases sanguíneos</li>
+                        </ul>
                     </div>
                     
-                    <div class="feature-card">
-                        <i class="fas fa-certificate"></i>
-                        <h3>Valor Legal</h3>
-                        <p>Resultados válidos para trámites legales</p>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Microbiología</h3>
+                        <p>Identificación de microorganismos patógenos y pruebas de sensibilidad a antimicrobianos.</p>
+                        <ul>
+                            <li>Cultivos bacteriológicos</li>
+                            <li>Antibiogramas</li>
+                            <li>Parasitología</li>
+                            <li>Micología</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h3>Inmunología</h3>
+                        <p>Estudios del sistema inmunológico, alergias, enfermedades autoinmunes y serologías.</p>
+                        <ul>
+                            <li>Pruebas de alergia</li>
+                            <li>Marcadores tumorales</li>
+                            <li>Enfermedades autoinmunes</li>
+                            <li>Serologías infecciosas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="paternity-hero" id="adn">
+            <div class="paternity-container">
+                <div class="paternity-content">
+                    <h1>Prueba de <span class="highlight">Paternidad</span> por ADN</h1>
+                    <h2>Resultados confiables con exactitud del 99.99%</h2>
+                    
+                    <div class="paternity-features">
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Privacidad Garantizada</h3>
+                            <p>Muestras procesadas de forma confidencial y segura</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <i class="fas fa-home"></i>
+                            <h3>Kit para Casa</h3>
+                            <p>Toma de muestras indolora en la comodidad de tu hogar</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Valor Legal</h3>
+                            <p>Resultados válidos para trámites legales</p>
+                        </div>
+                    </div>
+                    
+                    <div class="paternity-cta">
+                        <a href="contactos/contactos.html#adn" class="cta-btn primary">Solicitar Kit <i class="fas fa-arrow-right"></i></a>
+                        <a href="servicios/servicio.html#adn" class="cta-btn secondary">Más Información</a>
                     </div>
                 </div>
                 
-                <div class="paternity-cta">
-                    <a href="#agendar" class="cta-btn primary">Solicitar Kit <i class="fas fa-arrow-right"></i></a>
-                    <a href="#informacion" class="cta-btn secondary">Más Información</a>
+                <div class="paternity-image">
+                    <img src="img/paternidad.jpg" alt="Kit de prueba de paternidad en casa con hisopos bucales" loading="lazy" width="500" height="350">
                 </div>
             </div>
             
-            <div class="paternity-image">
-                <img src="img/paternidad.jpg" alt="Kit de prueba de paternidad en casa con hisopos bucales" loading="lazy">
-            </div>
-        </div>
-        
-        <div class="paternity-steps">
-            <h2>¿Cómo funciona la prueba?</h2>
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Solicita tu kit</h3>
-                    <p>Recíbelo en 24-48 horas</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Toma las muestras</h3>
-                    <p>Proceso indoloro con hisopo bucal</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Envía las muestras</h3>
-                    <p>Usa el sobre prepago incluido</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Recibe resultados</h3>
-                    <p>En 3-5 días hábiles</p>
+            <div class="paternity-steps">
+                <h2>¿Cómo funciona la prueba?</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Solicita tu kit</h3>
+                        <p>Recíbelo en 24-48 horas</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Toma las muestras</h3>
+                        <p>Proceso indoloro con hisopo bucal</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Envía las muestras</h3>
+                        <p>Usa el sobre prepago incluido</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Recibe resultados</h3>
+                        <p>En 3-5 días hábiles</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="lab-footer">
         <div class="footer-container">
@@ -302,7 +307,9 @@
                 <h3>Ubicación</h3>
                 <div class="map-wrapper">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5668.480956386286!2d-79.06919685127083!3d-8.02404507218471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b28559e9ba1a97%3A0x4a627c94cf827cc5!2sLaboratorio%20Cl%C3%ADnico%20Amaya%20Lab!5e0!3m2!1ses!2spe!4v1745242537442!5m2!1ses!2spe" 
-                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" 
+                            title="Mapa de ubicación de Laboratorio Clínico Amaya Lab" 
+                            aria-label="Mapa de ubicación"></iframe>
                 </div>
             </div>
     
@@ -311,16 +318,16 @@
                 <h3>Nuestro Local</h3>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="img/8.jpg" alt="Fachada del laboratorio A-maya Lab" loading="lazy">
+                        <img src="img/8.jpg" alt="Fachada principal del laboratorio A-maya Lab" loading="lazy" width="150" height="100">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/14.jpg" alt="Sala de espera del laboratorio" loading="lazy">
+                        <img src="img/14.jpg" alt="Sala de espera con cómodos asientos" loading="lazy" width="150" height="100">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/13.jpg" alt="Equipo de laboratorio moderno" loading="lazy">
+                        <img src="img/13.jpg" alt="Equipo de laboratorio moderno y tecnología avanzada" loading="lazy" width="150" height="100">
                     </div>
                     <div class="gallery-item">
-                        <img src="img/10.jpg" alt="Área de toma de muestras sanguíneas" loading="lazy">
+                        <img src="img/10.jpg" alt="Área de toma de muestras sanguíneas con profesional" loading="lazy" width="150" height="100">
                     </div>
                 </div>
             </div>
