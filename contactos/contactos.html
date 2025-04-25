@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Biomedic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="contactos.css">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/51987654321?text=Hola%20Biomedic,%20quisiera%20más%20información" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo con SVG preferiblemente (mejor calidad) -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="/img/logohe.svg" alt="Logo Laboratorio - Especialistas en análisis clínicos" loading="lazy" width="200" height="100">
+                    </a>
+                </div>
+                
+                <!-- Navegación principal -->
+                <nav class="navbar" aria-label="Navegación principal">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link active"><strong>Inicio</strong></a></li>
+                        <li class="nav-item"><a href="/servicios/servicio.html" class="nav-link"><strong>Servicios</strong></a></li>
+                        <li class="nav-item"><a href="/nosotros/nosotros.html" class="nav-link"><strong>Nosotros</strong></a></li>
+                        <li class="nav-item"><a href="/contactos/contactos.html" class="nav-link"><strong>Contacto</strong></a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Botón menú móvil accesible -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú móvil" aria-expanded="false">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="contact-section">
+        <div class="contact-hero">
+            <div class="hero-content">
+                <h1>Contáctenos</h1>
+                <p class="hero-subtitle">Estamos aquí para responder todas sus consultas</p>
+                <div class="hero-cta">
+                    <a href="#formulario" class="cta-button">
+                        <i class="fas fa-envelope"></i> Escríbenos
+                    </a>
+                    <a href="tel:+5116128282" class="cta-button secondary">
+                        <i class="fas fa-phone-alt"></i> Llámanos
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-container" id="formulario">
+            <div class="contact-info">
+                <h2><i class="fas fa-info-circle"></i> Información de Contacto</h2>
+                
+                <div class="info-card">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Dirección</h3>
+                            <p>Av. Javier Prado Este 2638, San Borja, Lima, Perú</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Teléfonos</h3>
+                            <p>(01) 612-8282</p>
+                            <p>+51 987 654 321</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Correo Electrónico</h3>
+                            <p>informes@biomedic.com.pe</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 8:00 am - 5:00 pm</p>
+                            <p>Sábados: 9:00 am - 1:00 pm</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-section">
+                    <h3>Conéctate con nosotros</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/Laboratorioclinicoamayalab?locale=es_LA" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laboratorioamayalab/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/990571182" class="whatsapp-btn" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2><i class="fas fa-paper-plane"></i> Formulario de Contacto</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre completo <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Correo electrónico <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Asunto <span class="required">*</span></label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje <span class="required">*</span></label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            
+            
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <img src="/img/logo.svg" alt="Biomedic Logo" class="footer-logo">
+                    <p class="footer-about-text">Somos especialistas en equipos médicos de alta tecnología para el cuidado de la salud, ofreciendo soluciones integrales para el sector médico.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone-alt"></i>990571182</p>
+                        <p><i class="fas fa-envelope"></i> laboratorioamayalab@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="/index.html"><i class="fas fa-chevron"></i> Inicio</a></li>
+                        <li><a href="/servicios/servicio.html"><i class="fas fa-chevron"></i> Servicios</a></li>
+                        <li><a href="/nosotros/nosotros.html"><i class="fas fa-chevron"></i> Nosotros</a></li>
+                        <li><a href="/contactos/contactos.html"><i class="fas fa-chevron"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section newsletter">
+                    <h3>Boletín Informativo</h3>
+                    <p>Suscríbete para recibir nuestras últimas noticias y promociones.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 Corporacion Amaya. Todos los derechos reservados.</p>
+                <div class="legal-links">
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="contanctos.js"></script>
+    <script src="/js/header.js"></script>
+</body>
+</html>
