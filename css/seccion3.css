@@ -1,271 +1,194 @@
-/* Estilos base - Versión Empresarial */
-.dna-section {
+/* Estilos base y variables */
+:root {
+    --dna-primary: #64ffda;
+    --dna-dark: #0a192f;
+    --dna-light: #ccd6f6;
+    --dna-card-bg: rgba(10, 25, 47, 0.85);
+    --transition: all 0.3s ease-out;
+  }
+  
+  .dna-section {
     position: relative;
-    width: 100%;
-    min-height: 100vh;
+    padding: 6rem 2rem;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #32ddf8; /* Fondo oscuro corporativo */
-    color: #fff;
-    padding: 4rem 0;
-}
-
-/* Video de fondo */
-.video-background {
+    color: white;
+    background-color: var(--dna-dark);
+  }
+  
+  /* Video de fondo */
+  .video-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-}
-
-.video-background video {
+    z-index: 0;
+  }
+  
+  .video-background video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.15;
-    transition: opacity 0.5s ease;
-}
-
-.video-overlay {
+  }
+  
+  .video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(10, 25, 47, 0.9) 0%, rgba(32, 82, 149, 0.6) 100%);
-    z-index: 2;
-}
-
-/* Contenedor principal */
-.dna-container {
+    background: rgba(10, 25, 47, 0.7);
+    z-index: 1;
+  }
+  
+  /* Contenedor principal */
+  .dna-container {
     position: relative;
-    z-index: 3;
-    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    z-index: 2;
     text-align: center;
-    padding: 2rem;
-}
-
-/* Títulos */
-.dna-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+  }
+  
+  /* Títulos */
+  .dna-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: 1.5rem;
-    color: #fff;
-    position: relative;
-    display: inline-block;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.dna-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 3rem;
-    color: #64ffda;
-    font-weight: 300;
+    color: var(--dna-primary);
+  }
+  
+  .dna-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
-
-/* Ilustración ADN */
-.dna-illustration {
-    margin: 3rem auto;
+    margin: 0 auto 3rem;
+    color: var(--dna-light);
+  }
+  
+  /* Ilustración SVG */
+  .dna-illustration {
+    margin: 2rem auto;
     width: 100%;
-    max-width: 400px;
-}
-
-.dna-svg {
+    max-width: 300px;
+  }
+  
+  .dna-svg {
     width: 100%;
     height: auto;
     filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.5));
-    transition: all 0.5s ease;
-}
-
-.dna-svg:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 15px rgba(100, 255, 218, 0.8));
-}
-
-/* Tarjetas de servicios */
-.dna-cards {
+  }
+  
+  /* Tarjetas */
+  .dna-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 4rem;
-}
-
-.dna-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2.5rem 2rem;
-    transition: all 0.4s ease;
+  }
+  
+  .dna-card {
+    background: var(--dna-card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
     border: 1px solid rgba(100, 255, 218, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.dna-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, transparent 100%);
-    z-index: -1;
-}
-
-.dna-card:hover {
+    transition: var(--transition);
+  }
+  
+  .dna-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    border-color: rgba(100, 255, 218, 0.3);
-}
-
-.dna-card-icon {
+    border-color: var(--dna-primary);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
+  }
+  
+  .dna-card-icon {
     font-size: 2.5rem;
-    color: #64ffda;
+    color: var(--dna-primary);
     margin-bottom: 1.5rem;
-    display: inline-block;
-}
-
-.dna-card h3 {
+  }
+  
+  .dna-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #fff;
-}
-
-.dna-card p {
-    color: #ccd6f6;
+    color: var(--dna-primary);
+  }
+  
+  .dna-card p {
     margin-bottom: 2rem;
-    font-size: 1rem;
     line-height: 1.6;
-}
-
-/* Botones */
-.dna-btn {
+  }
+  
+  /* Botones */
+  .dna-btn {
     display: inline-block;
     padding: 0.8rem 2rem;
     background: transparent;
-    color: #64ffda;
-    border: 1px solid #64ffda;
+    color: var(--dna-primary);
+    border: 1px solid var(--dna-primary);
     border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
+    transition: var(--transition);
     text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.dna-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
+  }
+  
+  .dna-btn:hover {
     background: rgba(100, 255, 218, 0.1);
-    transition: all 0.4s ease;
-    z-index: -1;
-}
-
-.dna-btn:hover {
-    background: rgba(100, 255, 218, 0.1);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
-}
-
-.dna-btn:hover::before {
-    left: 0;
-}
-
-/* Efectos especiales */
-.pulse {
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+  }
+  
+  .dna-btn span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Efectos especiales */
+  .pulse {
     animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.typed-out {
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .typed-out {
     overflow: hidden;
-    border-right: 3px solid #64ffda;
     white-space: nowrap;
-    animation: typing 1.5s steps(20, end) forwards, blink 0.75s step-end infinite;
-    width: 0;
-}
-
-@keyframes typing {
+    border-right: 3px solid var(--dna-primary);
+    animation: typing 3s steps(20, end) forwards;
+  }
+  
+  @keyframes typing {
     from { width: 0 }
     to { width: 100% }
-}
-
-@keyframes blink {
-    from, to { border-color: transparent }
-    50% { border-color: #64ffda }
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .dna-title {
-        font-size: 3rem;
-    }
-    
-    .dna-subtitle {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 768px) {
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
     .dna-section {
-        min-height: auto;
-        padding: 6rem 0;
-    }
-    
-    .dna-title {
-        font-size: 2.5rem;
-    }
-    
-    .dna-subtitle {
-        font-size: 1.1rem;
+      padding: 4rem 1rem;
     }
     
     .dna-cards {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media (max-width: 576px) {
-    .dna-container {
-        width: 95%;
-        padding: 1rem;
-    }
-    
-    .dna-title {
-        font-size: 2rem;
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .dna-card {
-        padding: 1.5rem 1rem;
+      padding: 1.5rem;
     }
-}
+  }
+  
+  @media (max-width: 480px) {
+    .dna-title {
+      font-size: 2rem;
+    }
+    
+    .dna-subtitle {
+      font-size: 1rem;
+    }
+  }

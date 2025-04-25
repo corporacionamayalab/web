@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/seccion1.css">
     <link rel="stylesheet" href="css/seccion2.css">
     <link rel="stylesheet" href="css/seccion3.css">
+    <link rel="stylesheet" href="css/seccion4.css">
 
 
 
@@ -181,66 +182,140 @@
     <section class="dna-section" id="adn">
         <!-- Video de fondo (loop, silenciado, autoplay) -->
         <div class="video-background">
-            <video autoplay muted loop playsinline aria-label="Animación de cadena de ADN girando">
+            <video autoplay muted loop playsinline preload="auto" aria-label="Animación de una cadena de ADN girando en 3D">
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-dna-strand-spinning-1767-large.mp4" type="video/mp4">
-                <!-- Fallback para navegadores que no soportan video -->
-                <img src="fallback-dna-bg.jpg" alt="Representación gráfica de una cadena de ADN" width="1920" height="1080">
+                <!-- Fallback mejorado -->
+                <img src="/assets/images/fallback-dna-bg.jpg" alt="Representación gráfica de una cadena de ADN en color azul verdoso" width="1920" height="1080" loading="lazy">
+                <track kind="captions" src="#" srclang="es" label="Descripción del video"> <!-- Opcional: añadir subtítulos -->
             </video>
-            <div class="video-overlay"></div> <!-- Capa para oscurecer el video -->
+            <div class="video-overlay" aria-hidden="true"></div>
         </div>
-
+    
         <!-- Contenido sobre el video -->
         <div class="dna-container">
             <h2 class="dna-title typed-out">Pruebas de ADN</h2>
             <p class="dna-subtitle" data-aos="fade-up" data-aos-delay="300">Tecnología avanzada para respuestas precisas y confidenciales.</p>
-
-            <!-- SVG de ADN -->
+    
+            <!-- SVG de ADN con mejor accesibilidad -->
             <div class="dna-illustration" data-aos="fade-in" data-aos-delay="500">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" class="dna-svg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" class="dna-svg" role="img" aria-labelledby="dnaTitle dnaDesc">
+                    <title id="dnaTitle">Ilustración de cadena de ADN</title>
+                    <desc id="dnaDesc">Representación gráfica de una doble hélice de ADN con nodos en los extremos</desc>
                     <path d="M20,50 Q50,20 80,50 T140,50" stroke="#64ffda" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
                     <path d="M20,50 Q50,80 80,50 T140,50" stroke="#64ffda" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
                     <circle cx="20" cy="50" r="3" fill="#64ffda"/>
                     <circle cx="140" cy="50" r="3" fill="#64ffda"/>
                 </svg>
             </div>
-
-            <!-- Tarjetas -->
+    
+            <!-- Tarjetas mejoradas semánticamente -->
             <div class="dna-cards">
-                <div class="dna-card" data-aos="fade-right" data-aos-delay="200">
-                    <div class="dna-card-icon pulse">
-                        <i class="fas fa-dna"></i>
+                <article class="dna-card" data-aos="fade-right" data-aos-delay="200">
+                    <div class="dna-card-icon pulse" aria-hidden="true">
+                        <i class="fas fa-dna" aria-hidden="true"></i>
                     </div>
                     <h3>Prueba de Paternidad</h3>
                     <p>Resultados 99.9% precisos en 5 días laborables con nuestro laboratorio certificado ISO 17025.</p>
-                    <a href="#contacto" class="dna-btn hover-effect">Solicitar</a>
-                </div>
+                    <a href="#contacto" class="dna-btn hover-effect" aria-label="Solicitar prueba de paternidad">
+                        <span>Solicitar</span>
+                    </a>
+                </article>
                 
-                <div class="dna-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="dna-card-icon pulse">
-                        <i class="fas fa-map-marked-alt"></i>
+                <article class="dna-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="dna-card-icon pulse" aria-hidden="true">
+                        <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
                     </div>
                     <h3>Análisis de Ancestros</h3>
                     <p>Descubre tus raíces genéticas con nuestro mapeo de más de 2,000 regiones globales.</p>
-                    <a href="#contacto" class="dna-btn hover-effect">Solicitar</a>
-                </div>
+                    <a href="#contacto" class="dna-btn hover-effect" aria-label="Solicitar análisis de ancestros">
+                        <span>Solicitar</span>
+                    </a>
+                </article>
                 
-                <div class="dna-card" data-aos="fade-left" data-aos-delay="400">
-                    <div class="dna-card-icon pulse">
-                        <i class="fas fa-heartbeat"></i>
+                <article class="dna-card" data-aos="fade-left" data-aos-delay="400">
+                    <div class="dna-card-icon pulse" aria-hidden="true">
+                        <i class="fas fa-heartbeat" aria-hidden="true"></i>
                     </div>
                     <h3>Salud Genómica</h3>
                     <p>Identifica predisposiciones a más de 100 condiciones médicas con nuestra tecnología de secuenciación.</p>
-                    <a href="#contacto" class="dna-btn hover-effect">Solicitar</a>
-                </div>
+                    <a href="#contacto" class="dna-btn hover-effect" aria-label="Solicitar análisis de salud genómica">
+                        <span>Solicitar</span>
+                    </a>
+                </article>
             </div>
         </div>
     </section>
 
+    <footer class="footer-organic" role="contentinfo">
+        <div class="footer-wave"></div>
+        
+        <div class="footer-content">
+            <!-- Sección Acerca de -->
+            <section class="footer-organic-section" aria-labelledby="about-heading">
+                <h3 id="about-heading">Acerca de Nosotros</h3>
+                <p>Somos una empresa comprometida con la excelencia y la satisfacción de nuestros clientes. Ofrecemos soluciones innovadoras adaptadas a tus necesidades.</p>
+                
+                <div class="social-links-organic" aria-label="Redes sociales">
+                    <a href="#" aria-label="Facebook" class="social-bubble"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter" class="social-bubble"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" class="social-bubble"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="social-bubble"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </section>
+            
+            <!-- Sección de Enlaces -->
+            <nav class="footer-organic-section" aria-labelledby="links-heading">
+                <h3 id="links-heading">Enlaces Rápidos</h3>
+                <ul class="organic-links">
+                    <li><a href="#" class="organic-link">Inicio</a></li>
+                    <li><a href="#" class="organic-link">Servicios</a></li>
+                    <li><a href="#" class="organic-link">Productos</a></li>
+                    <li><a href="#" class="organic-link">Nosotros</a></li>
+                    <li><a href="#" class="organic-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Sección de Contacto -->
+            <address class="footer-organic-section" aria-labelledby="contact-heading">
+                <h3 id="contact-heading">Contacto</h3>
+                <div class="contact-info-organic">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="https://maps.google.com?q=Calle+Principal+123,Ciudad,País" target="_blank" rel="noopener noreferrer" class="organic-link">Calle Principal 123, Ciudad, País</a>
+                </div>
+                <div class="contact-info-organic">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+1234567890" class="organic-link">+1 234 567 890</a>
+                </div>
+                <div class="contact-info-organic">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@empresa.com" class="organic-link">info@empresa.com</a>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="https://wa.me/1234567890" class="action-btn whatsapp-organic" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://maps.google.com?q=Calle+Principal+123,Ciudad,País" class="action-btn maps-organic" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-map-marked-alt"></i> Maps
+                    </a>
+                </div>
+            </address>
+        </div>
+        
+        <div class="footer-bottom-organic">
+            <p>&copy; <span id="current-year">2023</span> Nombre de la Empresa. Todos los derechos reservados.</p>
+            <div class="legal-links-organic">
+                <a href="#" class="organic-link">Política de Privacidad</a>
+                <a href="#" class="organic-link">Términos de Servicio</a>
+                <a href="#" class="organic-link">Aviso Legal</a>
+            </div>
+        </div>
+    </footer>
 
-   
     <script src="js/header.js"></script>
     <script src="js/seccion1.js"></script>
     <script src="js/seccion2.js"></script>
     <script src="js/seccion3.js"></script>
+    <script src="js/seccion4.js"></script>
 </body>
 </html>
