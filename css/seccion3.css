@@ -52,13 +52,13 @@
   
   /* Títulos */
   .dna-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+
     margin-bottom: 1.5rem;
     color: var(--dna-primary);
   }
   
   .dna-subtitle {
-    font-size: clamp(1rem, 2vw, 1.5rem);
+
     max-width: 800px;
     margin: 0 auto 3rem;
     color: var(--dna-light);
