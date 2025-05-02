@@ -63,7 +63,11 @@
                 </div>
                 <div class="particles-overlay"></div>
                 <div class="slide-overlay"></div>
-                <img src="ima.img/portada 1.png" alt="Laboratorio moderno" class="zoom-animate">
+                <picture>
+                    <source media="(max-width: 480px)" srcset="ima.img/portada1-mobile.jpg">
+                    <source media="(max-width: 768px)" srcset="ima.img/portada1-tablet.jpg">
+                    <img src="ima.img/portada 1.png" alt="Laboratorio moderno" class="slide-image">
+                </picture>
             </div>
             
             <!-- Slide 2 -->
@@ -79,7 +83,11 @@
                 </div>
                 <div class="particles-overlay"></div>
                 <div class="slide-overlay"></div>
-                <img src="ima.img/portada 2.png" alt="Tecnología médica" class="zoom-animate">
+                <picture>
+                    <source media="(max-width: 480px)" srcset="ima.img/portada2-mobile.jpg">
+                    <source media="(max-width: 768px)" srcset="ima.img/portada2-tablet.jpg">
+                    <img src="ima.img/portada 2.png" alt="Tecnología médica" class="slide-image">
+                </picture>
             </div>
             
             <!-- Slide 3 -->
@@ -95,11 +103,14 @@
                 </div>
                 <div class="particles-overlay"></div>
                 <div class="slide-overlay"></div>
-                <img src="ima.img/portada 3.png" alt="Equipo médico" class="zoom-animate">
+                <picture>
+                    <source media="(max-width: 480px)" srcset="ima.img/portada3-mobile.jpg">
+                    <source media="(max-width: 768px)" srcset="ima.img/portada3-tablet.jpg">
+                    <img src="ima.img/local 3.jpg" alt="Equipo médico" class="slide-image">
+                </picture>
             </div>
         </div>
     
-        <!-- Controles de navegación añadidos -->
         <button class="slider-arrow prev" aria-label="Slide anterior">&#10094;</button>
         <button class="slider-arrow next" aria-label="Slide siguiente">&#10095;</button>
         

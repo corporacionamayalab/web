@@ -245,6 +245,56 @@
       max-height: 400px;
   }
 }
+/* Estilos base para las imágenes del slider */
+.slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  
+  /* Optimización de rendimiento */
+  will-change: transform;
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Ajustes específicos para orientaciones */
+@media (orientation: portrait) {
+  .slide-image {
+      object-position: center top;
+  }
+}
+
+@media (orientation: landscape) {
+  .slide-image {
+      object-position: center center;
+  }
+}
+
+/* Ajustes para pantallas muy altas o muy anchas */
+@media (min-aspect-ratio: 16/9) {
+  .slide-image {
+      object-position: center 25%;
+  }
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .slide-image {
+      object-position: center 20%;
+  }
+}
+
+/* Efecto de zoom sutil para pantallas grandes */
+@media (min-width: 1600px) {
+  .slide-image {
+      transform: scale(1.05);
+  }
+}
 
 /* Dispositivos en orientación horizontal */
 @media (max-height: 500px) {
