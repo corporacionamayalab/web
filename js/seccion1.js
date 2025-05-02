@@ -1,97 +1,134 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-    let slideInterval;
-    const slideDuration = 6000; // 6 segundos por slide
-  
-    // Cambiar de slide con animación
-    function goToSlide(n) {
-      // Animación de salida
-      slides[currentSlide].style.opacity = 0;
-      slides[currentSlide].style.transition = 'opacity 1s ease-out';
+class HeroSlider {
+  constructor() {
+      this.slides = document.querySelectorAll('.slide');
+      this.dots = document.querySelectorAll('.slider-dot');
+      this.prevBtn = document.querySelector('.slider-arrow.prev');
+      this.nextBtn = document.querySelector('.slider-arrow.next');
+      this.currentSlide = 0;
+      this.slideInterval = 6000;
+      this.autoSlide = true;
+      this.touchStartX = 0;
+      this.touchEndX = 0;
+      this.slideShow = null;
       
-      setTimeout(() => {
-        slides[currentSlide].classList.remove('active');
-        
-        currentSlide = (n + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
-        
-        // Reiniciar animaciones
-        resetAnimations();
-        
-        // Animación de entrada
-        setTimeout(() => {
-          slides[currentSlide].style.opacity = 1;
-        }, 50);
-        
-      }, 1000);
-    }
+      this.init();
+  }
   
-    function nextSlide() {
-      goToSlide(currentSlide + 1);
-    }
-  
-    function resetAnimations() {
-      const titles = document.querySelectorAll('.title-animate');
-      const texts = document.querySelectorAll('.text-animate');
-      const icons = document.querySelectorAll('.icon-float');
+  init() {
+      // Initialize first slide
+      this.showSlide(this.currentSlide);
       
-      // Reiniciar animaciones
-      titles.forEach(title => {
-        title.style.animation = 'none';
-        void title.offsetWidth; // Trigger reflow
-        title.style.animation = 'fadeInUp 1s ease-out both';
+      // Start autoplay
+      this.startAutoSlide();
+      
+      // Event listeners
+      if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prevSlide());
+      if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.nextSlide());
+      
+      // Dot navigation
+      this.dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => this.goToSlide(index));
       });
       
-      texts.forEach(text => {
-        text.style.animation = 'none';
-        void text.offsetWidth;
-        text.style.animation = 'fadeInUp 1s ease-out 0.3s both';
-      });
+      // Pause on hover
+      const sliderContainer = document.querySelector('.slider-container');
+      sliderContainer.addEventListener('mouseenter', () => this.pauseAutoSlide());
+      sliderContainer.addEventListener('mouseleave', () => this.startAutoSlide());
       
-      icons.forEach((icon, i) => {
-        icon.style.animation = 'none';
-        void icon.offsetWidth;
-        icon.style.animation = `float 6s ease-in-out ${i}s infinite`;
+      // Touch events for mobile
+      sliderContainer.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
+      sliderContainer.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') this.prevSlide();
+          if (e.key === 'ArrowRight') this.nextSlide();
       });
-    }
+  }
   
-    // Iniciar carrusel automático
-    function startSlider() {
-      slideInterval = setInterval(nextSlide, slideDuration);
-    }
+  showSlide(index) {
+      // Hide all slides
+      this.slides.forEach(slide => slide.classList.remove('active'));
+      this.dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Show selected slide
+      this.slides[index].classList.add('active');
+      this.dots[index].classList.add('active');
+      
+      // Reset animations
+      this.resetAnimations(this.slides[index]);
+      
+      // Update current slide
+      this.currentSlide = index;
+  }
   
-    // Pausar al interactuar
-    function setupInteractions() {
-      const slider = document.querySelector('.slider-container');
+  resetAnimations(slide) {
+      const animatedElements = slide.querySelectorAll('[class*="-animate"]');
       
-      slider.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
+      animatedElements.forEach(el => {
+          const className = Array.from(el.classList).find(c => c.includes('-animate'));
+          el.classList.remove(className);
+          void el.offsetWidth; // Trigger reflow
+          el.classList.add(className);
       });
-      
-      slider.addEventListener('mouseleave', () => {
-        clearInterval(slideInterval);
-        startSlider();
-      });
-      
-      // Touch para móviles
-      let touchStartX = 0;
-      
-      slider.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        clearInterval(slideInterval);
-      }, {passive: true});
-      
-      slider.addEventListener('touchend', (e) => {
-        const touchEndX = e.changedTouches[0].screenX;
-        if (touchEndX < touchStartX - 50) nextSlide();
-        if (touchEndX > touchStartX + 50) goToSlide(currentSlide - 1);
-        startSlider();
-      }, {passive: true});
-    }
+  }
   
-    // Iniciar todo
-    startSlider();
-    setupInteractions();
-    resetAnimations();
-  });
+  nextSlide() {
+      const nextIndex = (this.currentSlide + 1) % this.slides.length;
+      this.showSlide(nextIndex);
+      this.restartAutoSlide();
+  }
+  
+  prevSlide() {
+      const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+      this.showSlide(prevIndex);
+      this.restartAutoSlide();
+  }
+  
+  goToSlide(index) {
+      this.showSlide(index);
+      this.restartAutoSlide();
+  }
+  
+  startAutoSlide() {
+      if (this.autoSlide) {
+          this.slideShow = setInterval(() => this.nextSlide(), this.slideInterval);
+      }
+  }
+  
+  pauseAutoSlide() {
+      clearInterval(this.slideShow);
+  }
+  
+  restartAutoSlide() {
+      this.pauseAutoSlide();
+      this.startAutoSlide();
+  }
+  
+  handleTouchStart(e) {
+      this.touchStartX = e.changedTouches[0].screenX;
+      this.pauseAutoSlide();
+  }
+  
+  handleTouchEnd(e) {
+      this.touchEndX = e.changedTouches[0].screenX;
+      this.handleSwipe();
+      this.startAutoSlide();
+  }
+  
+  handleSwipe() {
+      const threshold = 50;
+      const diff = this.touchStartX - this.touchEndX;
+      
+      if (diff > threshold) {
+          this.nextSlide();
+      } else if (diff < -threshold) {
+          this.prevSlide();
+      }
+  }
+}
+
+// Initialize slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new HeroSlider();
+});

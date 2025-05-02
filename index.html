@@ -31,7 +31,10 @@
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="servicios.html">Servicios</a></li>
                         <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="lista.html">Examenes</a></li>
+                        <li><a href="toma.html">Domicilio</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
+                        
                     </ul>
                 </nav>
                 
@@ -50,7 +53,7 @@
             <div class="slide active">
                 <div class="slide-content">
                     <h1 class="title-animate">Análisis Clínicos de Alta Precisión</h1>
-                    <p class="text-animate">Tecnología de vanguardia para resultados confiables </p>
+                    <p class="text-animate">Tecnología de vanguardia para resultados confiables</p>
                     <div class="floating-icons">
                         <i class="fas fa-microscope icon-float"></i>
                         <i class="fas fa-flask icon-float"></i>
@@ -59,7 +62,11 @@
                 </div>
                 <div class="particles-overlay"></div>
                 <div class="slide-overlay"></div>
-                <img src="ima.img/portada.jpg" alt="Laboratorio moderno" class="zoom-animate">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="ima.img/portada 1.png">
+                    <source media="(min-width: 769px)" srcset="ima.img/portada 1.png">
+                    <img src="ima.img/portada 1.png" alt="Laboratorio moderno" class="zoom-animate" loading="lazy">
+                </picture>
             </div>
             
             <!-- Slide 2 -->
@@ -75,7 +82,11 @@
                 </div>
                 <div class="particles-overlay"></div>
                 <div class="slide-overlay"></div>
-                <img src="ima.img/portada2 2.jpg" alt="Tecnología médica" class="zoom-animate">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="ima.img/portada 2.png">
+                    <source media="(min-width: 769px)" srcset="ima.img/portada 2.png">
+                    <img src="ima.img/portada 2.png" alt="Tecnología médica" class="zoom-animate" loading="lazy">
+                </picture>
             </div>
             
             <!-- Slide 3 -->
@@ -91,8 +102,22 @@
                 </div>
                 <div class="particles-overlay"></div>
                 <div class="slide-overlay"></div>
-                <img src="ima.img/port2ada 3.jpg" alt="Equipo médico" class="zoom-animate">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="ima.img/portada 3.png">
+                    <source media="(min-width: 769px)" srcset="ima.img/portada 3.png">
+                    <img src="ima.img/portada 3.png" alt="Equipo médico" class="zoom-animate" loading="lazy">
+                </picture>
             </div>
+        </div>
+    
+        <!-- Controles de navegación añadidos -->
+        <button class="slider-arrow prev" aria-label="Slide anterior">&#10094;</button>
+        <button class="slider-arrow next" aria-label="Slide siguiente">&#10095;</button>
+        
+        <div class="slider-nav">
+            <button class="slider-dot active" aria-label="Ir al slide 1"></button>
+            <button class="slider-dot" aria-label="Ir al slide 2"></button>
+            <button class="slider-dot" aria-label="Ir al slide 3"></button>
         </div>
     </section>
 
