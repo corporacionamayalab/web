@@ -1,130 +1,118 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Carrusel de imágenes
-    const carousel = {
-        items: document.querySelectorAll('.carousel-item'),
-        indicators: document.querySelectorAll('.carousel-indicators span'),
-        prevBtn: document.querySelector('.carousel-control.prev'),
-        nextBtn: document.querySelector('.carousel-control.next'),
-        currentIndex: 0,
-        interval: null,
-        intervalTime: 5000,
-        
-        init: function() {
-            // Crear indicadores dinámicamente si no existen
-            if (this.indicators.length === 0) {
-                const indicatorsContainer = document.querySelector('.carousel-indicators');
-                this.items.forEach((_, index) => {
-                    const indicator = document.createElement('span');
-                    indicator.dataset.index = index;
-                    if (index === 0) indicator.classList.add('active');
-                    indicatorsContainer.appendChild(indicator);
-                });
-                this.indicators = document.querySelectorAll('.carousel-indicators span');
-            }
-            
-            // Configurar eventos
-            this.prevBtn.addEventListener('click', () => this.prev());
-            this.nextBtn.addEventListener('click', () => this.next());
-            
-            this.indicators.forEach(indicator => {
-                indicator.addEventListener('click', () => {
-                    this.goTo(parseInt(indicator.dataset.index));
-                });
-            });
-            
-            // Iniciar autoplay
-            this.startAutoPlay();
-            
-            // Pausar autoplay cuando el mouse está sobre el carrusel
-            const carouselElement = document.querySelector('.carousel');
-            carouselElement.addEventListener('mouseenter', () => this.stopAutoPlay());
-            carouselElement.addEventListener('mouseleave', () => this.startAutoPlay());
-        },
-        
-        showSlide: function(index) {
-            // Ocultar todas las diapositivas
-            this.items.forEach(item => item.classList.remove('active'));
-            this.indicators.forEach(indicator => indicator.classList.remove('active'));
-            
-            // Mostrar la diapositiva actual
-            this.items[index].classList.add('active');
-            this.indicators[index].classList.add('active');
-            this.currentIndex = index;
-        },
-        
-        next: function() {
-            const nextIndex = (this.currentIndex + 1) % this.items.length;
-            this.showSlide(nextIndex);
-        },
-        
-        prev: function() {
-            const prevIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
-            this.showSlide(prevIndex);
-        },
-        
-        goTo: function(index) {
-            this.showSlide(index);
-        },
-        
-        startAutoPlay: function() {
-            this.stopAutoPlay();
-            this.interval = setInterval(() => this.next(), this.intervalTime);
-        },
-        
-        stopAutoPlay: function() {
-            if (this.interval) {
-                clearInterval(this.interval);
-                this.interval = null;
-            }
-        }
-    };
+    // Slider functionality
+    const slider = document.querySelector('.hero-slider');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev-slide');
+    const nextBtn = document.querySelector('.next-slide');
+    const indicators = document.querySelector('.slide-indicators');
+    let currentSlide = 0;
+    const slideCount = slides.length;
     
-    // Inicializar el carrusel
-    if (document.querySelector('.carousel')) {
-        carousel.init();
+    // Create indicators
+    for (let i = 0; i < slideCount; i++) {
+      const indicator = document.createElement('span');
+      if (i === 0) indicator.classList.add('active');
+      indicator.addEventListener('click', () => goToSlide(i));
+      indicators.appendChild(indicator);
     }
     
-    // Efecto de scroll suave para los enlaces
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
+    const indicatorDots = document.querySelectorAll('.slide-indicators span');
+    
+    // Go to specific slide
+    function goToSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      indicatorDots[currentSlide].classList.remove('active');
+      currentSlide = (n + slideCount) % slideCount;
+      slides[currentSlide].classList.add('active');
+      indicatorDots[currentSlide].classList.add('active');
+    }
+    
+    // Next slide
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+    
+    // Previous slide
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Auto slide
+    let slideInterval = setInterval(nextSlide, 6000);
+    
+    // Pause on hover
+    slider.addEventListener('mouseenter', () => {
+      clearInterval(slideInterval);
     });
     
-    // Animación al hacer scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.beneficio-card, .paso');
+    slider.addEventListener('mouseleave', () => {
+      slideInterval = setInterval(nextSlide, 6000);
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
         
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Mobile menu toggle (if you add a mobile menu later)
+    const mobileMenuToggle = document.createElement('button');
+    mobileMenuToggle.classList.add('mobile-menu-toggle');
+    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    document.body.appendChild(mobileMenuToggle);
+    
+    mobileMenuToggle.addEventListener('click', function() {
+      document.body.classList.toggle('mobile-menu-open');
+    });
+    
+    // Sticky header (if you add a header later)
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (header) {
+        if (window.scrollY > 100) {
+          header.classList.add('sticky');
+        } else {
+          header.classList.remove('sticky');
+        }
+      }
+    });
+    
+    // Animations on scroll
+    const animateOnScroll = function() {
+      const elements = document.querySelectorAll('.step, .section-title, .section-subtitle');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          element.classList.add('animate');
+        }
+      });
     };
     
-    // Configurar elementos para animación
-    document.querySelectorAll('.beneficio-card, .paso').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
-    
-    // Ejecutar al cargar y al hacer scroll
-    window.addEventListener('load', animateOnScroll);
     window.addEventListener('scroll', animateOnScroll);
-});
+    animateOnScroll(); // Run once on load
+  });

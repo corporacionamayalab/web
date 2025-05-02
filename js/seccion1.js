@@ -24,52 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slides[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
     }
-    // Precarga de imágenes para mejor performance
-function preloadSliderImages() {
-    const images = [
-        'ima.img/portada1-mobile.jpg',
-        'ima.img/portada1-tablet.jpg',
-        'ima.img/portada1-desktop.jpg',
-        'ima.img/portada2-mobile.jpg',
-        'ima.img/portada2-tablet.jpg',
-        'ima.img/portada2-desktop.jpg',
-        'ima.img/portada3-mobile.jpg',
-        'ima.img/portada3-tablet.jpg',
-        'ima.img/portada3-desktop.jpg'
-    ];
     
-    images.forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
-}
-
-// Llamar a la precarga cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', preloadSliderImages);
-
-// Ajuste dinámico de imágenes en tiempo real
-function handleImageResize() {
-    const slides = document.querySelectorAll('.slide');
-    const windowWidth = window.innerWidth;
-    
-    slides.forEach(slide => {
-        const img = slide.querySelector('.slide-image');
-        if (windowWidth < 480) {
-            img.style.objectPosition = 'center top';
-        } else if (windowWidth < 768) {
-            img.style.objectPosition = 'center 30%';
-        } else {
-            img.style.objectPosition = 'center center';
-        }
-    });
-}
-
-// Escuchar cambios de tamaño
-window.addEventListener('resize', handleImageResize);
-window.addEventListener('orientationchange', handleImageResize);
-
-// Inicializar al cargar
-window.addEventListener('load', handleImageResize);
     
     // Función para el slide siguiente
     function nextSlide() {
