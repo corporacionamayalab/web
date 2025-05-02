@@ -1,22 +1,10 @@
-/* Hero Slider - Enhanced Version */
-:root {
-  --primary-color: #2a7fba;
-  --secondary-color: #1a5276;
-  --text-light: #ffffff;
-  --text-dark: #333333;
-  --overlay-dark: rgba(0, 0, 0, 0.6);
-  --overlay-light: rgba(255, 255, 255, 0.1);
-  --transition-speed: 0.5s;
-}
-
+/* Estilos base del slider */
 .hero-slider {
   position: relative;
   width: 100%;
   height: 100vh;
-  max-height: 1200px;
-  min-height: 600px;
+  max-height: 800px;
   overflow: hidden;
-  background: #000;
 }
 
 .slider-container {
@@ -25,18 +13,23 @@
   position: relative;
 }
 
-/* Slide Styles */
 .slide {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity var(--transition-speed) ease-in-out;
-  will-change: opacity;
+  transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
   opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .slide-content {
@@ -45,108 +38,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: var(--text-light);
-  z-index: 10;
+  color: white;
+  z-index: 3;
   width: 90%;
   max-width: 1200px;
-  padding: 2rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
 }
 
-.slide h1 {
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-.slide p {
-
-  margin-bottom: 3rem;
-  opacity: 0;
-  transform: translateY(30px);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Animation Classes */
-.slide.active .title-animate {
-  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
-}
-
-.slide.active .text-animate {
-  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.6s;
-}
-
-.floating-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 3rem;
-  flex-wrap: wrap;
-}
-
-.icon-float {
-
-  opacity: 0;
-  transform: translateY(30px);
-  color: var(--text-light);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.icon-float:hover {
-  color: var(--primary-color);
-  transform: translateY(-5px);
-}
-
-/* Icon Animation Sequence */
-.slide.active .icon-float:nth-child(1) {
-  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.9s;
-}
-.slide.active .icon-float:nth-child(2) {
-  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 1.1s;
-}
-.slide.active .icon-float:nth-child(3) {
-  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 1.3s;
-}
-
-/* Image Styles */
-.slide picture {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  will-change: transform;
-}
-
-.zoom-animate {
-  transform: scale(1.15);
-  transition: transform 12s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-}
-
-.slide.active .zoom-animate {
-  transform: scale(1);
-}
-
-/* Overlay Effects */
 .slide-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, var(--overlay-dark) 0%, transparent 50%, var(--overlay-dark) 100%);
-  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .particles-overlay {
@@ -155,43 +61,54 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
-  pointer-events: none;
+  z-index: 2;
+  /* Efecto de partículas se puede añadir con JS */
 }
 
-/* Navigation Controls */
-.slider-nav {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+/* Efectos de animación */
+.title-animate {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards 0.3s;
+}
+
+.text-animate {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards 0.6s;
+}
+
+.floating-icons {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 30px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.9s;
 }
 
-.slider-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  padding: 0;
+.icon-float {
+  font-size: 2.5rem;
+  animation: float 3s ease-in-out infinite;
 }
 
-.slider-dot.active {
-  background: var(--text-light);
-  transform: scale(1.3);
+.icon-float:nth-child(2) {
+  animation-delay: 0.3s;
 }
 
+.icon-float:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Controles de navegación */
 .slider-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.3);
   color: white;
   border: none;
   width: 50px;
@@ -199,89 +116,174 @@
   border-radius: 50%;
   font-size: 1.5rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 4;
   transition: all 0.3s ease;
 }
 
 .slider-arrow:hover {
-  background: var(--primary-color);
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.slider-arrow.prev {
-  left: 2rem;
+.prev {
+  left: 30px;
 }
 
-.slider-arrow.next {
-  right: 2rem;
+.next {
+  right: 30px;
 }
 
-/* Animations */
+.slider-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 4;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  background: white;
+}
+
+/* Animaciones */
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(30px);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Responsive Adjustments */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Efecto zoom sutil para la imagen */
+.zoom-animate {
+  animation: zoom 10s ease infinite;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
-  .hero-slider {
-      min-height: 500px;
+  .title-animate {
+    font-size: 2.5rem;
   }
   
-  .slider-arrow {
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
+  .text-animate {
+    font-size: 1.3rem;
   }
   
-  .slider-arrow.prev {
-      left: 1rem;
-  }
-  
-  .slider-arrow.next {
-      right: 1rem;
+  .icon-float {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero-slider {
-      min-height: 400px;
+    height: 80vh;
+    max-height: 600px;
   }
   
-  .slide-content {
-      padding: 1rem;
+  .title-animate {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .text-animate {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
   }
   
   .floating-icons {
-      gap: 1rem;
-      margin-top: 2rem;
+    gap: 20px;
   }
   
-  .slider-nav {
-      bottom: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-slider {
-      min-height: 300px;
+  .icon-float {
+    font-size: 1.8rem;
   }
   
   .slider-arrow {
-      width: 35px;
-      height: 35px;
-      font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-slider {
+    height: 70vh;
+    max-height: 500px;
+  }
+  
+  .title-animate {
+    font-size: 1.8rem;
+  }
+  
+  .text-animate {
+    font-size: 1rem;
+  }
+  
+  .floating-icons {
+    gap: 15px;
+  }
+  
+  .icon-float {
+    font-size: 1.5rem;
+  }
+  
+  .slider-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .prev {
+    left: 15px;
+  }
+  
+  .next {
+    right: 15px;
+  }
+  
+  .slider-nav {
+    bottom: 20px;
   }
   
   .slider-dot {
-      width: 10px;
-      height: 10px;
+    width: 10px;
+    height: 10px;
   }
 }

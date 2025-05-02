@@ -1,134 +1,138 @@
-class HeroSlider {
-  constructor() {
-      this.slides = document.querySelectorAll('.slide');
-      this.dots = document.querySelectorAll('.slider-dot');
-      this.prevBtn = document.querySelector('.slider-arrow.prev');
-      this.nextBtn = document.querySelector('.slider-arrow.next');
-      this.currentSlide = 0;
-      this.slideInterval = 6000;
-      this.autoSlide = true;
-      this.touchStartX = 0;
-      this.touchEndX = 0;
-      this.slideShow = null;
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos del slider
+    const sliderContainer = document.querySelector('.slider-container');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    let currentSlide = 0;
+    let slideInterval;
+    const intervalTime = 5000; // 5 segundos
+    
+    // Función para cambiar de slide
+    function goToSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
       
-      this.init();
-  }
-  
-  init() {
-      // Initialize first slide
-      this.showSlide(this.currentSlide);
+      currentSlide = (n + slides.length) % slides.length;
       
-      // Start autoplay
-      this.startAutoSlide();
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
       
-      // Event listeners
-      if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prevSlide());
-      if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.nextSlide());
+      // Reiniciar animaciones
+      resetAnimations();
+    }
+    
+    // Función para resetear animaciones
+    function resetAnimations() {
+      const activeSlide = slides[currentSlide];
+      const title = activeSlide.querySelector('.title-animate');
+      const text = activeSlide.querySelector('.text-animate');
+      const icons = activeSlide.querySelector('.floating-icons');
       
-      // Dot navigation
-      this.dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => this.goToSlide(index));
+      // Resetear animaciones
+      title.style.animation = 'none';
+      text.style.animation = 'none';
+      icons.style.animation = 'none';
+      
+      // Forzar reflow/repaint
+      void title.offsetWidth;
+      void text.offsetWidth;
+      void icons.offsetWidth;
+      
+      // Reactivar animaciones
+      title.style.animation = '';
+      text.style.animation = '';
+      icons.style.animation = '';
+    }
+    
+    // Función para el siguiente slide
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+    
+    // Función para el slide anterior
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+    
+    // Iniciar autoplay
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, intervalTime);
+    }
+    
+    // Pausar autoplay
+    function pauseSlider() {
+      clearInterval(slideInterval);
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', function() {
+      pauseSlider();
+      nextSlide();
+      startSlider();
+    });
+    
+    prevBtn.addEventListener('click', function() {
+      pauseSlider();
+      prevSlide();
+      startSlider();
+    });
+    
+    // Navegación por dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', function() {
+        pauseSlider();
+        goToSlide(index);
+        startSlider();
       });
+    });
+    
+    // Pausar al interactuar con el slider
+    sliderContainer.addEventListener('mouseenter', pauseSlider);
+    sliderContainer.addEventListener('mouseleave', startSlider);
+    
+    // Touch events para móviles
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    sliderContainer.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+      pauseSlider();
+    }, {passive: true});
+    
+    sliderContainer.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      startSlider();
+    }, {passive: true});
+    
+    function handleSwipe() {
+      const threshold = 50; // Mínimo de desplazamiento para considerar swipe
       
-      // Pause on hover
-      const sliderContainer = document.querySelector('.slider-container');
-      sliderContainer.addEventListener('mouseenter', () => this.pauseAutoSlide());
-      sliderContainer.addEventListener('mouseleave', () => this.startAutoSlide());
-      
-      // Touch events for mobile
-      sliderContainer.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
-      sliderContainer.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
-      
-      // Keyboard navigation
-      document.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowLeft') this.prevSlide();
-          if (e.key === 'ArrowRight') this.nextSlide();
-      });
-  }
-  
-  showSlide(index) {
-      // Hide all slides
-      this.slides.forEach(slide => slide.classList.remove('active'));
-      this.dots.forEach(dot => dot.classList.remove('active'));
-      
-      // Show selected slide
-      this.slides[index].classList.add('active');
-      this.dots[index].classList.add('active');
-      
-      // Reset animations
-      this.resetAnimations(this.slides[index]);
-      
-      // Update current slide
-      this.currentSlide = index;
-  }
-  
-  resetAnimations(slide) {
-      const animatedElements = slide.querySelectorAll('[class*="-animate"]');
-      
-      animatedElements.forEach(el => {
-          const className = Array.from(el.classList).find(c => c.includes('-animate'));
-          el.classList.remove(className);
-          void el.offsetWidth; // Trigger reflow
-          el.classList.add(className);
-      });
-  }
-  
-  nextSlide() {
-      const nextIndex = (this.currentSlide + 1) % this.slides.length;
-      this.showSlide(nextIndex);
-      this.restartAutoSlide();
-  }
-  
-  prevSlide() {
-      const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-      this.showSlide(prevIndex);
-      this.restartAutoSlide();
-  }
-  
-  goToSlide(index) {
-      this.showSlide(index);
-      this.restartAutoSlide();
-  }
-  
-  startAutoSlide() {
-      if (this.autoSlide) {
-          this.slideShow = setInterval(() => this.nextSlide(), this.slideInterval);
+      if (touchEndX < touchStartX - threshold) {
+        nextSlide(); // Swipe izquierda
+      } else if (touchEndX > touchStartX + threshold) {
+        prevSlide(); // Swipe derecha
       }
-  }
-  
-  pauseAutoSlide() {
-      clearInterval(this.slideShow);
-  }
-  
-  restartAutoSlide() {
-      this.pauseAutoSlide();
-      this.startAutoSlide();
-  }
-  
-  handleTouchStart(e) {
-      this.touchStartX = e.changedTouches[0].screenX;
-      this.pauseAutoSlide();
-  }
-  
-  handleTouchEnd(e) {
-      this.touchEndX = e.changedTouches[0].screenX;
-      this.handleSwipe();
-      this.startAutoSlide();
-  }
-  
-  handleSwipe() {
-      const threshold = 50;
-      const diff = this.touchStartX - this.touchEndX;
-      
-      if (diff > threshold) {
-          this.nextSlide();
-      } else if (diff < -threshold) {
-          this.prevSlide();
+    }
+    
+    // Iniciar slider
+    startSlider();
+    
+    // Ajustar altura del slider en carga y resize
+    function adjustSliderHeight() {
+      const heroSlider = document.querySelector('.hero-slider');
+      if (window.innerWidth <= 768) {
+        heroSlider.style.height = '70vh';
+      } else {
+        heroSlider.style.height = '100vh';
       }
-  }
-}
-
-// Initialize slider when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  new HeroSlider();
-});
+    }
+    
+    window.addEventListener('load', adjustSliderHeight);
+    window.addEventListener('resize', adjustSliderHeight);
+    
+    // Efecto de partículas opcional (puedes implementarlo con una librería como particles.js)
+  });
