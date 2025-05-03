@@ -1,31 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Laboratorio Clínico Amaya - Servicios de análisis clínicos con tecnología de punta y profesionales certificados">
-    <title>Laboratorio Amaya - Servicios Clínicos Especializados</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/servicio.css/header.css">
-    <link rel="stylesheet" href="css/servicio.css/seccion 1.css">
-    <link rel="stylesheet" href="css/servicio.css/seccion 2.css">
-    <link rel="stylesheet" href="css/servicio.css/seccion 3.css">
-    <link rel="stylesheet" href="css/servicio.css/footer.css">
-
-
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
 <body>
+    <head>
+        <link rel="stylesheet" href="css/servi.css">
+        <link rel="stylesheet" href="css/header3.0.css">
+    </head>
     <!-- Header Mejorado -->
+    
+
     <header class="main-header">
         <div class="main-nav">
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="ima.img/logo.svg" alt="Laboratorio Clínico Amaya" width="150" height="50">
+                        <img src="ima.img/logo.svg" alt="Laboratorio Clínico">
                     </a>
                 </div>
                 
@@ -37,42 +25,58 @@
                         <li><a href="lista.html">Examenes</a></li>
                         <li><a href="toma.html">Domicilio</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
+                        
                     </ul>
                 </nav>
                 
                 <div class="header-actions">
-                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú móvil" aria-expanded="false">
-                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </div>
         </div>
     </header>
 
+
+    <main>
         <!-- Hero Slider -->
-        <section class="hero-slider" aria-label="Presentación visual">
-            <div class="slide" style="background-image: url('ima.img/servi\ 1.png')">
-              <div class="slide-content">
-                <h1>Tecnología de Punta para tu Salud</h1>
-                <p>Resultados precisos con equipos de última generación</p>
-                <a href="lista.html" class="btn">Conoce más</a>
-              </div>
+        <section class="hero-slider" aria-label="Carrusel de imágenes" role="region" aria-roledescription="carousel">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('ima.img/servi\ 1.png')">
+                <div class="slide-content" aria-live="polite">
+                    <h1>Tecnología de Punta para tu Salud</h1>
+                    <p>Resultados precisos con equipos de última generación</p>
+                    <a href="lista.html" class="btn primary">Conoce más</a>
+                </div>
             </div>
-            <div class="slide" style="background-image: url('ima.img/servi\ 2.png')">
-              <div class="slide-content">
-                <h1>Especialistas Certificados</h1>
-                <p>Nuestro equipo médico garantiza diagnósticos confiables</p>
-                <a href="#equipo" class="btn">Nuestro equipo</a>
-              </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('ima.img/servi\ 2.png')">
+                <div class="slide-content">
+                    <h1>Especialistas Certificados</h1>
+                    <p>Nuestro equipo médico garantiza diagnósticos confiables</p>
+                    <a href="#equipo" class="btn primary">Nuestro equipo</a>
+                </div>
             </div>
-            <div class="slide" style="background-image: url('ima.img/servi\ 3.png')">
-              <div class="slide-content">
-                <h1>Resultados Confiables y Rápidos</h1>
-                <p>Entrega de resultados con máxima precisión</p>
-                <a href="servicios.html" class="btn">Ver servicios</a>
-              </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('ima.img/servi\ 3.png')">
+                <div class="slide-content">
+                    <h1>Resultados Confiables y Rápidos</h1>
+                    <p>Entrega de resultados con máxima precisión</p>
+                    <a href="servicios.html" class="btn primary">Ver servicios</a>
+                </div>
             </div>
-          </section>
+            <div class="slider-controls">
+                <button type="button" class="prev-slide" aria-label="Diapositiva anterior">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="next-slide" aria-label="Diapositiva siguiente">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="slider-dots" aria-label="Controles del carrusel">
+                <span class="slider-dot active" data-slide="0" aria-current="true"></span>
+                <span class="slider-dot" data-slide="1"></span>
+                <span class="slider-dot" data-slide="2"></span>
+            </div>
+        </section>
 
         <!-- Services Grid -->
         <section id="servicios" class="services-section">
@@ -95,6 +99,7 @@
                             <li>Hemoglobina glicosilada</li>
                         </ul>
                         <div class="service-actions">
+
                             <a href="contacto.html" class="btn primary">Cotizar</a>
                         </div>
                     </article>
@@ -194,7 +199,7 @@
                 <div class="gallery-grid">
                     <figure class="gallery-item">
                         <img src="ima.img/local 1.jpg" alt="Equipo moderno de laboratorio" loading="lazy" width="400" height="300">
-                        <figcaption class="gallery-caption">Profesionales Certificados</figcaption>
+                        <figcaption class="gallery-caption"> Profesionales Certificados</figcaption>
                     </figure>
                     <figure class="gallery-item">
                         <img src="ima.img/local 2.jpg" alt="Tecnología avanzada de análisis" loading="lazy" width="400" height="300">
@@ -204,7 +209,10 @@
                         <img src="ima.img/local 3.jpg" alt="Equipo de profesionales trabajando" loading="lazy" width="400" height="300">
                         <figcaption class="gallery-caption">Laboratorio clínico</figcaption>
                     </figure>
-                    
+                    <figure class="gallery-item">
+                        <img src="ima.img/local 4.jpg" alt="Ambiente limpio y controlado del laboratorio" loading="lazy" width="400" height="300">
+                        <figcaption class="gallery-caption">Ambientes Controlados</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -232,7 +240,7 @@
                     <article class="feature-item">
                         <i class="fas fa-certificate" aria-hidden="true"></i>
                         <h3>Convenios</h3>
-                        <p>Synlab Bermandlab Biomedica</p>
+                        <p>Synlab  Bermandlab Biomedica</p>
                     </article>
                 </div>
             </div>
@@ -255,17 +263,19 @@
                 </div>
             </div>
         </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="ima.img/logo.svg" alt="Laboratorio Amaya" class="footer-logo" loading="lazy" width="180" height="60">
+                    <img src="ima.img/logo.svg" alt="LabGenius" class="footer-logo" loading="lazy" width="180" height="60">
                     <p>Laboratorio clínico especializado en diagnósticos precisos y confiables.</p>
                     <div class="social-links">
                         <a href="https://facebook.com/labgenius" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://instagram.com/labgenius" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        
                     </div>
                 </div>
                 <div class="footer-col">
@@ -289,9 +299,9 @@
                 <div class="footer-col">
                     <h3>Contacto</h3>
                     <address class="contact-info">
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Dirección: Calle San Martin 11-12 CP El Milagro</p>
-                        <p><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+51990571182">990571182</a></p>
-                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:laboratorioamayalab@gmail.com">laboratorioamayalab@gmail.com</a></p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Dirección: Calle San Martin 11-12 CP El Milagro</p>
+                        <p><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+18001234567">990571182</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@labgenius.com">laboratorioamayalab@gmail.com</a></p>
                         <p><i class="fas fa-clock" aria-hidden="true"></i> Lunes a Viernes: 7am - 7pm</p>
                     </address>
                 </div>
@@ -309,11 +319,19 @@
         </div>
     </footer>
 
-    <script src="js/servicio.js/header.js" defer></script>
-    <script src="js/servicio.js/seccion 1.js" defer></script>
-    <script src="js/servicio.js/seccion 2.js" defer></script>
-    <script src="js/servicio.js/seccion 3.js" defer></script>
-    <script src="js/servicio.js/footer.js" defer></script>
-    
+    <script src="js/servi.js" defer></script>
+    <script src="js/header3.0.js" defer></script>
+    <script>
+        // Actualizar año automáticamente
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Botón de menú móvil
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = this.closest('nav');
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            nav.classList.toggle('mobile-menu-open');
+        });
+    </script>
 </body>
 </html>
