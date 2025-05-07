@@ -3,80 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabClin - Toma de Muestras a Domicilio</title>
+    <title>LabDomicilio - Toma de Muestras Médicas a Domicilio</title>
+    
+    <!-- Enlaces a recursos externos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/toma.css">
-    <link rel="stylesheet" href="css/header5.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="main-nav">
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="ima.img/logo.svg" alt="Laboratorio Clínico">
-                    </a>
-                </div>
-                
-                <nav class="navigation">
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="lista.html">Examenes</a></li>
-                        <li><a href="toma.html">Domicilio</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        
-                    </ul>
-                </nav>
-                
-                <div class="header-actions">
-                    <button class="mobile-menu-btn" id="mobileMenuBtn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="ima.img/logo.svg" alt="LabDomicilio" class="logo-img">
+                </a>
             </div>
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="servicios.html" class="nav-link">Servicios</a></li>
+                    <li class="nav-item"><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li class="nav-item"><a href="lista.html" class="nav-link">Examenes</a></li>
+                    <li class="nav-item"><a href="toma.html" class="nav-link">Domicilio</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
         </div>
     </header>
 
+    <!-- ========== HERO SECTION ========== -->
     <section class="hero" id="inicio">
         <div class="hero-slider">
+            <!-- Slide 1 -->
             <div class="slide active" style="background-image: url('ima.img/servi\ 1.png');">
                 <div class="container">
                     <div class="slide-content">
                         <h2>Exámenes médicos en la comodidad de tu hogar</h2>
                         <p>Evita desplazamientos y largas esperas. Nuestro equipo especializado viene a ti.</p>
-                        <a href="#contacto" class="btn btn-secondary">Agendar ahora</a>
+                        <a href="contacto.html" class="btn btn-secondary">Agendar ahora</a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Slide 2 -->
             <div class="slide" style="background-image: url('ima.img/servi\ 2.png');">
                 <div class="container">
                     <div class="slide-content">
                         <h2>Resultados rápidos y confiables</h2>
                         <p>Tecnología de última generación para diagnósticos precisos.</p>
-                        <a href="#servicios" class="btn btn-secondary">Conoce nuestros servicios</a>
+                        <a href="contacto.html" class="btn btn-secondary">Conoce nuestros servicios</a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Slide 3 -->
             <div class="slide" style="background-image: url('ima.img/servi\ 3.png');">
                 <div class="container">
                     <div class="slide-content">
                         <h2>Profesionales certificados</h2>
                         <p>Nuestro equipo de enfermeros y técnicos cuenta con amplia experiencia.</p>
-                        <a href="#contacto" class="btn btn-secondary">Solicitar información</a>
+                        <a href="contacto.html" class="btn btn-secondary">Solicitar información</a>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Controles del slider -->
+        <div class="slider-controls">
+            <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <div class="slide-indicators"></div>
+            <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
     </section>
 
+    <!-- ========== HOW IT WORKS SECTION ========== -->
     <section class="how-it-works" id="como-funciona">
         <div class="container">
             <h2 class="section-title">¿Cómo funciona nuestro servicio?</h2>
-            <p class="section-subtitle">Un proceso simple y seguro en 3 pasos</p>
+            <p class="section-subtitle">Un proceso simple y seguro en 4 pasos</p>
             
             <div class="steps-container">
+                <!-- Paso 1 -->
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-icon"><i class="fas fa-calendar-alt"></i></div>
@@ -84,6 +98,7 @@
                     <p>Llámanos o completa el formulario en línea para programar tu visita.</p>
                 </div>
                 
+                <!-- Paso 2 -->
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-icon"><i class="fas fa-user-nurse"></i></div>
@@ -91,80 +106,94 @@
                     <p>Un profesional certificado llega a tu hogar a la hora acordada.</p>
                 </div>
                 
+                <!-- Paso 3 -->
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-icon"><i class="fas fa-vial"></i></div>
                     <h3>Toma de muestra</h3>
                     <p>Realizamos el procedimiento con todos los protocolos de seguridad.</p>
                 </div>
+                
+                <!-- Paso 4 -->
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-file-medical"></i></div>
+                    <h3>Recibe tus resultados</h3>
+                    <p>Te enviamos los resultados por email o los puedes consultar en nuestra plataforma.</p>
+                </div>
             </div>
             
+            <!-- CTA Section -->
             <div class="cta-section">
                 <h3>¿Listo para probar nuestro servicio?</h3>
-                <a href="#contacto" class="btn btn-primary">Solicitar servicio ahora</a>
+                <a href="contacto.html" class="btn btn-primary">Solicitar servicio ahora</a>
             </div>
         </div>
     </section>
 
-    <section class="services" id="servicios">
-        <div class="container">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <p class="section-subtitle">Análisis clínicos especializados</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Hematología</h3>
-                    <p>Análisis completos de sangre y estudios hematológicos.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-dna"></i></div>
-                    <h3>Bioquímica</h3>
-                    <p>Perfiles metabólicos, enzimáticos y estudios especializados.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-microscope"></i></div>
-                    <h3>Microbiología</h3>
-                    <p>Cultivos y estudios microbiológicos para diagnóstico preciso.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contacto">
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>LabClin</h3>
-                    <p>Laboratorio Clínico Especializado con servicio de toma de muestras a domicilio.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <!-- Columna 1: Sobre nosotros -->
+                <div class="footer-col footer-about">
+                    <h3>A-MAYA LAB</h3>
+                    <p>Servicio profesional de toma de muestras médicas a domicilio. Brindamos comodidad, seguridad y resultados confiables.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/labgenius" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/labgenius" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h3>Contacto</h3>
-                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                    <p><i class="fas fa-envelope"></i> info@labclin.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Av. Principal #123, Ciudad</p>
+                
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="footer-col footer-links">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="lista.html">Examenes</a></li>
+                        <li><a href="toma.html">Domicilio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>Horario</h3>
-                    <p>Lunes a Viernes: 7:00 am - 7:00 pm</p>
-                    <p>Sábados: 8:00 am - 2:00 pm</p>
-                    <p>Domingos: Cerrado</p>
+                
+                <!-- Columna 3: Servicios -->
+                <div class="footer-col footer-services">
+                    <h3>Nuestros servicios</h3>
+                    <ul>
+                        <li><a href="lista.html">Análisis de sangre</a></li>
+                        <li><a href="lista.html">Pruebas COVID-19</a></li>
+                        <li><a href="lista.html">Exámenes de orina</a></li>
+                        <li><a href="lista.html">Pruebas de alergias</a></li>
+                        <li><a href="lista.html">Perfiles bioquímicos</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 4: Contacto -->
+                <div class="footer-col footer-contact">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 990571182</li>
+                        <li><i class="fas fa-envelope"></i> laboratorioamayalab@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle San Martin 11-12 CP El Milagro</li>
+                        <li><i class="fas fa-clock"></i> Lunes a Viernes: 8am - 6pm</li>
+                    </ul>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; <span id="current-year"></span> LabClin. Todos los derechos reservados.</p>
+            
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Corporacion AMAYA. Todos los derechos reservados.</p>
+                <div class="legal-links">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Política de privacidad</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/toma.js"></script>
-    <script src="js/header5.js"></script>
 </body>
 </html>
