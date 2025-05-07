@@ -178,6 +178,7 @@ body {
     transition: all var(--transition-speed) var(--organic-curve);
     position: relative;
     overflow: hidden;
+    text-decoration: none; /* Elimina el subrayado */
 }
 
 .social-bubble::before {

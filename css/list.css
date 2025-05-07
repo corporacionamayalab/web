@@ -32,9 +32,6 @@ body {
 }
 
 /* Header */
-.main-header {
-    /* Se añade el selector para coincidir con tu HTML */
-}
 
 /* Hero Section */
 .hero {
@@ -379,6 +376,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    text-decoration: none; /* Elimina el subrayado */
 }
 
 .social-icons a:hover {

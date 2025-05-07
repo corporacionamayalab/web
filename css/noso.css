@@ -506,6 +506,7 @@ section {
     z-index: 999;
     transition: var(--transition);
     animation: pulse 2s infinite;
+    text-decoration: none; /* Elimina el subrayado */
 }
 
 .whatsapp-float:hover {
