@@ -3,19 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-Maya Lab - Laboratorio Clínico</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/noso.css">
-    <link rel="stylesheet" href="css/header2.0.css">
+
+    <title> Nosotros| Laboratorio Clínico de Confianza Amaya Lab | Laboratorio Clínico Confiable en trujillo </title>
+    <meta name="description" content="Amaya Lab ofrece análisis clínicos y diagnósticos precisos en Trujillo, La Libertad. Confía en nuestros expertos para resultados confiables y atención de calidad. ¡Agenda tu cita hoy!">
+    <meta name="keywords" content="laboratorio clínico, análisis clínicos, diagnósticos médicos, pruebas de sangre, exámenes de laboratorio, salud, bienestar, Trujillo, La Libertad, Perú">
+    <link rel="canonical" href="https://www.laboratorioamayalab.com/nosotros/"> 
+
+    <meta property="og:title" content="Amaya Lab - Laboratorio Clínico de Confianza en Trujillo">
+    <meta property="og:description" content="En AmayaLab, estamos comprometidos con tu bienestar y el de tu familia aquí en Trujillo. Desde nuestra fundación, hemos crecido con la misión de ofrecer servicios de diagnóstico clínico de la más alta calidad">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.laboratorioamayalab.com/nosotros/">
+    <meta property="og:image" content="https://www.laboratorioamayalab.com/https://res.cloudinary.com/ddktvflzb/image/upload/v1751347435/portada_4.0_Mesa_de_trabajo_1_Mesa_de_trabajo_1_Mesa_de_trabajo_1_ta710z.jpg">
+    <meta property="og:site_name" content="Amaya Lab">
+    <meta property="og:locale" content="es_PE">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AMayaLab_Oficial">
+    <meta name="twitter:creator" content="@AMayaLab_Oficial">
+    <meta name="twitter:title" content="Amaya Lab - Análisis Clínicos Confiables en Trujillo">
+    <meta name="twitter:description" content="Análisis y diagnósticos de laboratorio precisos y confiables para tu salud en Trujillo, La Libertad. Visita Amaya Lab.">
+    <meta name="twitter:image" content="https://www.laboratorioamayalab.com/https://res.cloudinary.com/ddktvflzb/image/upload/v1751352274/analisis_clinico_Mesa_de_trabajo_1_xg1bex.jpg">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="nosotros/css/header2.0.css">
+    <link rel="stylesheet" href="nosotros/css/screm.css">
+    <link rel="stylesheet" href="nosotros/css/seccion1.css">
+    <link rel="stylesheet" href="nosotros/css/seccion2.css">
+    <link rel="stylesheet" href="nosotros/css/overlay.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://www.laboratorioamayalab.com/favicon.png"> 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "name": "Amayalab",
+      "url": "https://laboratorioamayalab.com/",
+      "logo": "https://laboratorioamayalab.com/ima.img/logoicon.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+51966735358",
+        "contactType": "Reservas y consultas",
+        "areaServed": "Trujillo",
+        "availableLanguage": ["es"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle San Martin 11-12",
+        "addressLocality": "El Milagro",
+        "addressRegion": "La Libertad",
+        "postalCode": "13008", 
+        "addressCountry": "PE"
+      },
+      "sameAs": [
+        "https://www.facebook.com/Laboratorioclinicoamayalab", 
+        "https://www.instagram.com/laboratorioamayalab/",
+        "https://wa.me/51966735358"
+        "https://www.tiktok.com/@amayalab03"    
+      ]
+    }
+    </script>
 </head>
 <body>
-    <!-- Botón de WhatsApp flotante -->
-    <a href="https://wa.me/+51966735358" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <div id="splash-screen">
+    <video autoplay muted loop playsinline id="background-video">
+        <source src="https://res.cloudinary.com/ddktvflzb/video/upload/v1751353624/porta_5iITxnDB_wx0mg4.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <img src="ima.img/logo.svg" alt="Logo del Laboratorio" class="splash-logo">
+    </div>
 
+    <div class="overlay" id="anuncio-overlay"></div>
+
+<div class="overlay" id="anuncio-overlay"></div>
+
+<div class="anuncio-container" id="anuncio-rutinario">
+    <img src="https://res.cloudinary.com/ddktvflzb/image/upload/v1751354342/nosotros-02_bxyrwk.jpg" alt="Información de Exámenes Rutinarios de Salud">
+    <button class="anuncio-close-btn" id="cerrar-anuncio"></button>
+</div>
     <!-- Encabezado -->
     <header class="main-header">
         <div class="main-nav">
@@ -31,8 +97,8 @@
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="servicios.html">Servicios</a></li>
                         <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="lista.html">Examenes</a></li>
-                        <li><a href="toma.html">Domicilio</a></li>
+                        <li><a href="examenes.html">Examenes</a></li>
+                        <li><a href="domicilio.html">Domicilio</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
@@ -45,128 +111,132 @@
             </div>
         </div>
     </header>
+    <section class="hero-slider" aria-label="Carrusel de imágenes promocionales" role="region">
+    <div class="carousel-container">
+        <div id="slide-1" class="carousel-slide active" style="background-image: url('ima.img/local1.jpg');" role="group" aria-roledescription="slide" aria-label="Diapositiva 1 de 3: Tecnología de Punta para tu Salud">
+            <div class="slide-content">
+                <h1 class="slide-title">Tecnología de Punta para tu Salud</h1>
+            </div>
+        </div>
 
-    <!-- Sección Hero -->
+        <div id="slide-2" class="carousel-slide" style="background-image: url('ima.img/local2.jpg');" role="group" aria-roledescription="slide" aria-label="Diapositiva 2 de 3: Especialistas Certificados">
+            <div class="slide-content">
+                <h1 class="slide-title">Especialistas Certificados</h1>
+            </div>
+        </div>
 
-    <!-- Sección Servicios -->
+        <div id="slide-3" class="carousel-slide" style="background-image: url('ima.img/local3.jpg');" role="group" aria-roledescription="slide" aria-label="Diapositiva 3 de 3: Resultados Confiables y Rápidos">
+            <div class="slide-content">
+                <h1 class="slide-title">Resultados Confiables y Rápidos</h1>
+            </div>
+        </div>
+    </div>
+
+    </section>
 
     <!-- Sección Nosotros -->
-    <section class="about" id="nosotros">
-        <div class="container">
-            <h2 class="section-title">Nuestra Identidad</h2>
-            
-            <div class="about-content">
-                <div class="mission-vision">
-                    <div class="card">
-                        <h3><i class="fas fa-bullseye"></i> Misión</h3>
-                        <p>Proveer servicios de diagnóstico clínico con altos estándares de calidad, precisión y confiabilidad, contribuyendo al cuidado de la salud de nuestros pacientes mediante tecnología de vanguardia y personal altamente calificado.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i class="fas fa-eye"></i> Visión</h3>
-                        <p>Ser reconocidos como el laboratorio clínico líder en nuestra región, destacando por nuestra excelencia en servicio, innovación tecnológica y contribución al avance de la medicina diagnóstica.</p>
-                    </div>
-                </div>
-                
-                <div class="values">
-                    <h3><i class="fas fa-heart"></i> Valores</h3>
-                    <ul>
-                        <li><strong>Integridad:</strong> Actuamos con honestidad y ética en todo momento.</li>
-                        <li><strong>Excelencia:</strong> Buscamos la perfección en cada diagnóstico.</li>
-                        <li><strong>Compromiso:</strong> Nos dedicamos plenamente al bienestar de nuestros pacientes.</li>
-                        <li><strong>Innovación:</strong> Adoptamos las últimas tecnologías para mejor servicio.</li>
-                        <li><strong>Confidencialidad:</strong> Respetamos y protegemos la privacidad de los pacientes.</li>
-                    </ul>
-                </div>
-                
-                <div class="pillars">
-                    <h3><i class="fas fa-gem"></i> Pilares Fundamentales</h3>
-                    <div class="pillars-grid">
-                        <div class="pillar">
-                            <h4>Tecnología</h4>
-                            <p>Equipos de última generación para resultados precisos.</p>
-                        </div>
-                        <div class="pillar">
-                            <h4>Talento Humano</h4>
-                            <p>Profesionales altamente capacitados y en constante actualización.</p>
-                        </div>
-                        <div class="pillar">
-                            <h4>Calidad</h4>
-                            <p>Procesos estandarizados y controles rigurosos.</p>
-                        </div>
-                        <div class="pillar">
-                            <h4>Atención Personalizada</h4>
-                            <p>Trato humano y comprensivo a cada paciente.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="lab-nuestra-identidad" class="lab-section">
+    <h2>Nuestra Identidad</h2>
+    <p>En <STROng>AMAYA LAB</STROng>, somos suS aliado confiable en la salud. Ofrecemos diagnósticos precisos y confiables.</p>
+    <p>Nuestra misión es brindar un servicio de excelencia basado en la ética, calidez humana e innovación, contribuyendo al bienestar de nuestros pacientes. Su salud es nuestra prioridad.</p>
+</section>
+
+---
+
+<section id="lab-galeria-imagenes" class="lab-section">
+    <h2>Nuestras Instalaciones</h2>
+    <p>Le invitamos a conocer nuestras instalaciones:</p>
+    <div class="lab-carrusel-contenedor">
+        <div class="lab-carrusel-inner">
+            <img src="ima.img/local1.jpg" alt="Fachada del Laboratorio" class="lab-carrusel-img">
+            <img src="ima.img/local2.jpg" alt="Área de Recepción" class="lab-carrusel-img">
+            <img src="ima.img/local3.jpg" alt="Sala de Extracción" class="lab-carrusel-img">
+            <img src="ima.img/local4.jpg" alt="Equipo de Análisis" class="lab-carrusel-img">
         </div>
-    </section>
-
-    <!-- Sección Convenios -->
-    <section class="agreements" id="convenios">
-        <div class="container">
-            <h2 class="section-title">Convenios Corporativos</h2>
-            <p class="section-subtitle">Trabajamos con las principales instituciones para brindarte los mejores beneficios</p>
-            
-            <div class="logos-container">
-                <div class="logo-slide">
-                    <img src="ima.img/synlab.svg" alt="Convenio 1">
-                    <img src="ima.img/bermanlab.svg" alt="Convenio 2">
-                    <img src="ima.img/biomedica servi fo.svg" alt="Convenio 3">
-
-                </div>
+        <div class="lab-carrusel-indicadores">
             </div>
+    </div>
+</section>
+
+---
+
+<section id="lab-convenios" class="lab-section">
+    <h2>Convenios Corporativos</h2>
+    <p>Establecemos alianzas estratégicas para ofrecer beneficios exclusivos a empresas, aseguradoras y organizaciones. Facilitamos el acceso a servicios de laboratorio de alta calidad, promoviendo la salud preventiva.</p>
+    <h3>Nuestros Prestigiosos Aliados:</h3>
+    <div class="convenios-logos">
+        <a href="https://www.synlab.pe/" target="_blank" rel="noopener noreferrer" class="logo-link">
+            <img src="ima.img/synlab.svg" alt="Logo Empresa 1" class="convenio-logo">
+        </a>
+        <a href="https://www.bermanlab.com/" target="_blank" rel="noopener noreferrer" class="logo-link">
+            <img src="ima.img/bermanlab.svg" alt="Logo Empresa 2" class="convenio-logo">
+        </a>
+        <a href="https://biomedicacorp.pe/login" target="_blank" rel="noopener noreferrer" class="logo-link">
+            <img src="ima.img/biomedica.svg" alt="Logo Empresa 3" class="convenio-logo">
+        </a>
+        <a href="https://dnacenter.com/peru/" target="_blank" rel="noopener noreferrer" class="logo-link">
+            <img src="ima.img/DDC.JPG" alt="Logo Empresa 3" class="convenio-logo">
+        </a>
+    </div>
+</section>
+
+<footer class="footer-organic" role="contentinfo">
+    <div class="footer-wave"></div>
+
+    <div class="footer-content">
+        <section class="footer-organic-section" aria-labelledby="about-heading">
+            <h3 id="about-heading">Nosotros</h3>
+            <p>Somos una empresa comprometida con la excelencia y la satisfacción de nuestros clientes en Trujillo, La Libertad, Perú. Ofrecemos soluciones innovadoras adaptadas a tus necesidades locales.</p>
+        </section>
+
+        <nav class="footer-organic-section" aria-labelledby="links-heading">
+            <h3 id="links-heading">Enlaces Rápidos</h3>
+            <ul class="organic-links">
+                <li><a href="index.html" class="organic-link">Inicio</a></li>
+                <li><a href="servicios.html" class="organic-link">Servicios</a></li>
+                <li><a href="nosotros.html" class="organic-link">Nosotros</a></li>
+                <li><a href="contacto.html" class="organic-link">Contacto</a></li>
+                <li><a href="domicilio.html" class="organic-link">Domicilio</a></li>
+                <li><a href="examenes.html" class="organic-link">Examenes</a></li>
+            </ul>
+        </nav>
+
+        <address class="footer-organic-section" aria-labelledby="contact-heading">
+            <h3 id="contact-heading">Contacto</h3>
+            <div class="contact-info-organic">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="organic-link">Calle San Martin 11-12 CP - El milagro, Trujillo, La Libertad, Perú</span>
+            </div>
+            <div class="contact-info-organic">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+51966735358" class="organic-link">+51966735358</a>
+            </div>
+            <div class="contact-info-organic">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:laboratorioamayalab@gmail.com" class="organic-link">laboratorioamayalab@gmail.com</a>
+            </div>
+        </address>
+    </div>
+
+    <div class="footer-bottom-organic">
+        <p>© <span id="current-year">2024</span> Corporacion AMAYA. Todos los derechos reservados.</p>
+        <div class="legal-links-organic">
+            <a href="#" class="organic-link">Política de Privacidad</a>
+            <a href="#" class="organic-link">Términos de Servicio</a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>A-Maya Lab</h3>
-                    <p>Laboratorio clínico especializado en diagnóstico preciso y confiable con tecnología de punta y personal altamente calificado.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Enlaces Rápidos</h3>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="lista.html">Examenes</a></li>
-                        <li><a href="toma.html">Domicilio</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Contactos</h3>
-                    <ul>
-                        <li><a href="https://www.facebook.com/Laboratorioclinicoamayalab?locale=es_LA">Facebook</a></li>
-                        <li><a href="https://www.instagram.com/laboratorioamayalab/">Instagram</a></li>
-                        <li><a href="https://wa.me/+51966735358">WhatsApp</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Información</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle San Martin 11-12 CP El Milagro</li>
-                        <li><i class="fas fa-phone"></i> 966735358</li>
-                        <li><i class="fas fa-envelope"></i> laboratorioamayalab@gmail.com</li>
-                    </ul>
-                </div>
+    </div>
+</footer>
+<div class="floating-social-buttons">
+                <a href="https://wa.me/+51966735358" class="whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/Laboratorioclinicoamayalab?locale=es_LA" class="facebook" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/laboratorioamayalab/" class="instagram" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@amayalab03" class="tiktok" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>&copy; 2024 Corporacion AMAYA. Todos los derechos reservados.</p>
-                </div>
-                
-            </div>
-        </div>
-    </footer>
 
-    <script src="js/noso.js"></script>
-    <script src="js/header2.0.js"></script>
+    <script src="nosotros/js/header2.0.js"></script>
+    <script src="nosotros/js/screm.js"></script>
+    <script src="nosotros/js/seccion1.js"></script>
+    <script src="nosotros/js/seccion2.js"></script>
+    <script src="nosotros/js/overlay.js"></script>
 </body>
 </html>

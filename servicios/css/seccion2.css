@@ -1,0 +1,651 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif; /* Fuente profesional y legible */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px; /* Ancho máximo para centrar el contenido */
+    margin: 0 auto;
+    padding: 12px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #004d99; /* Un color azul oscuro para los títulos */
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn.primary {
+    background-color: #007bff; /* Azul vibrante para el botón principal */
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.btn.primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn.secondary {
+    background-color: #f0f0f0; /* Fondo claro para el botón secundario */
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.btn.secondary:hover {
+    background-color: #e0e0e0;
+    color: #0056b3;
+}
+
+/* --- Sección de Servicios --- */
+.services-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre las tarjetas */
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Efecto al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    font-size: 3em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #004d99;
+}
+
+.service-features {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left; /* Alinea los ítems de la lista a la izquierda */
+}
+
+.service-features li {
+    margin-bottom: 8px;
+    color: #555;
+    position: relative;
+    padding-left: 20px; /* Espacio para el ícono de check */
+}
+
+.service-features li::before {
+    content: "\f00c"; /* Código de Font Awesome para un check mark */
+    font-family: "Font Awesome 5 Free"; /* Usar Free si no tienes Pro */
+    font-weight: 900;
+    color: #28a745; /* Color verde para el check */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.service-actions {
+    margin-top: 25px;
+}
+
+
+/* --- Sección de Galería --- */
+.gallery-section {
+    padding: 80px 0;
+    background-color: #e6f2ff; /* Un azul muy claro */
+    text-align: center;
+}
+
+.gallery-content-wrapper {
+    display: flex; /* Usa flexbox para alinear texto e imágenes */
+    flex-direction: column; /* Por defecto, apilado en móviles */
+    gap: 40px; /* Espacio entre el texto y la cuadrícula */
+    align-items: flex-start; /* Alinea los ítems al inicio del eje cruzado */
+}
+
+.gallery-text {
+    flex: 1; /* Ocupa el espacio disponible */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding-right: 20px; /* Espacio entre el texto y las imágenes */
+}
+
+.gallery-text h3 {
+    font-size: 2em;
+    color: #004d99;
+    margin-bottom: 15px;
+}
+
+.gallery-text p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.gallery-grid {
+    flex: 2; /* Ocupa el doble de espacio que el texto */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2: dos columnas, se ajusta con media queries */
+    gap: 25px;
+    width: 100%; /* Asegura que ocupe el ancho disponible */
+}
+
+.gallery-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden; /* Asegura que la imagen no se desborde del borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Altura fija para uniformidad en 2x2 */
+    object-fit: cover; /* Recorta la imagen para cubrir el espacio */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+}
+
+.gallery-caption {
+    padding: 15px;
+    font-size: 1.1em;
+    color: #004d99;
+    font-weight: bold;
+}
+
+/* --- Sección ¿Por Qué Elegirnos? --- */
+.why-choose-us {
+    padding: 80px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.feature-item:hover {
+    background-color: #e6f2ff; /* Cambia el color al pasar el ratón */
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 3em;
+    color: #28a745; /* Verde para los íconos */
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #004d99;
+}
+
+.feature-item p {
+    color: #555;
+}
+
+/* --- Sección CTA (Call to Action) --- */
+.cta-section {
+    background-color: #4a9ef798; /* Azul principal para el CTA */
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-heading {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+.cta-section p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons .btn {
+    margin: 10px;
+    padding: 15px 30px; /* Botones más grandes para el CTA */
+    font-size: 1.1em;
+}
+
+.cta-buttons .btn.primary {
+    background-color: white; /* Botón blanco sobre fondo azul */
+    color: #007bff;
+    border: 1px solid white;
+}
+
+.cta-buttons .btn.primary:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
+}
+
+.cta-buttons .btn.secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-buttons .btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Pie de Página (Footer) --- */
+.footer {
+    background-color: #222; /* Fondo oscuro para el footer */
+    color: #f0f0f0;
+    padding: 60px 0 20px;
+    font-size: 0.95em;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: #007bff;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.footer-col p,
+.footer-col ul,
+.footer-col address {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a,
+.footer-col address a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover,
+.footer-col address a:hover {
+    color: #007bff;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1); /* Hace el logo blanco para fondo oscuro */
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ccc;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+.back-to-top {
+    background-color: #007bff;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    position: fixed; /* Lo hace flotante */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
+/* --- Media Queries para Responsividad --- */
+
+/* Pantallas de escritorio (más de 768px) */
+@media (min-width: 769px) {
+    .gallery-content-wrapper {
+        flex-direction: row; /* En pantallas grandes, el texto y las imágenes están lado a lado */
+        text-align: left; /* Alinea el texto a la izquierda en vista de escritorio */
+    }
+
+    .gallery-text {
+        flex: 1; /* El texto ocupa 1 parte */
+        padding-right: 40px; /* Más espacio entre texto y grid en escritorio */
+    }
+
+    .gallery-grid {
+        flex: 2; /* Las imágenes ocupan 2 partes (el doble) */
+    }
+}
+
+/* Tablets y pantallas medianas */
+@media (max-width: 992px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    .section-subtitle {
+        font-size: 1.1em;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .services-grid,
+    .features-grid,
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Más flexibles */
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+
+    .service-card h3 {
+        font-size: 1.6em;
+    }
+
+    .gallery-text h3 {
+        font-size: 1.8em;
+    }
+
+    .gallery-item img {
+        height: 180px; /* Ajusta la altura para tablets */
+    }
+
+    .cta-heading {
+        font-size: 2.2em;
+    }
+
+    .cta-section p {
+        font-size: 1.1em;
+    }
+
+    .footer-col h3 {
+        font-size: 1.3em;
+    }
+}
+
+/* Teléfonos móviles */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .section-subtitle {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .services-grid,
+    .gallery-grid,
+    .features-grid,
+    .footer-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 20px;
+    }
+
+    .service-card,
+    .gallery-item,
+    .feature-item {
+        padding: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1.4em;
+    }
+
+    .gallery-content-wrapper {
+        flex-direction: column; /* Apila el texto y las imágenes */
+        align-items: center; /* Centra el contenido */
+    }
+
+    .gallery-text {
+        padding-right: 0; /* Elimina padding para móviles */
+        text-align: center; /* Centra el texto */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mantiene 2x2 si el espacio lo permite */
+        gap: 15px; /* Reduce el espacio entre imágenes */
+    }
+
+    .gallery-item img {
+        height: 150px; /* Altura más pequeña para móviles */
+    }
+
+    .cta-heading {
+        font-size: 1.8em;
+    }
+
+    .cta-section p {
+        font-size: 1em;
+    }
+
+    .cta-buttons {
+        flex-direction: column; /* Botones CTA apilados en móviles */
+        gap: 10px;
+    }
+
+    .cta-buttons .btn {
+        width: 90%; /* Ancho completo para los botones CTA */
+        max-width: 300px;
+    }
+
+    .footer-col {
+        text-align: center; /* Centrar contenido del footer en móviles */
+    }
+
+    .social-links {
+        justify-content: center; /* Centra los iconos sociales */
+        display: flex;
+    }
+
+    .contact-info p {
+        display: flex; /* Para alinear ícono y texto */
+        align-items: center;
+        justify-content: center; /* Centra el contenido */
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .back-to-top {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Pequeños ajustes para teléfonos muy pequeños */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .service-icon,
+    .feature-item i {
+        font-size: 2.5em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas si 2x2 es muy apretado */
+    }
+}
+
+
+.floating-social-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.floating-social-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Colores específicos para cada red social */
+.floating-social-buttons a.whatsapp {
+    background-color: #25D366;
+}
+
+.floating-social-buttons a.facebook {
+    background-color: #1877F2;
+}
+
+.floating-social-buttons a.instagram {
+    background-color: #E4405F;
+    /* background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
+}
+
+/* NUEVOS ESTILOS PARA TIKTOK */
+.floating-social-buttons a.tiktok {
+    background-color: #000000; /* Color negro característico de TikTok */
+}
+
+/* Efecto al pasar el ratón por encima */
+.floating-social-buttons a:hover {
+    transform: translateY(-5px);
+    opacity: 0.9;
+}
