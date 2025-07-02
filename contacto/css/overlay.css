@@ -15,7 +15,7 @@
     /* Nuevas propiedades para la responsividad de la imagen */
     max-width: 90vh; /* Máximo 90% del ancho del viewport */
     max-height: 90vh; /* Máximo 90% de la altura del viewport */
-    width: 90%o; /* Ancho automático basado en el contenido */
+    width: 90%; /* Ancho automático basado en el contenido */
     height: auto; /* Altura automática basada en el contenido */
 
     border-radius: 8px;

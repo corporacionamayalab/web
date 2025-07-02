@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mostrarAnuncio();
 
     // Ocultar el anuncio automáticamente después de 5 segundos
-    const timerAnuncio = setTimeout(ocultarAnuncio, 5000); // 5000 milisegundos = 5 segundos
+    const timerAnuncio = setTimeout(ocultarAnuncio, 20000); // 5000 milisegundos = 5 segundos
 
     // Ocultar el anuncio al hacer clic en el botón de cierre
     cerrarBtn.addEventListener('click', function() {
