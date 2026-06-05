@@ -1,0 +1,150 @@
+/* ============================================
+   COMPROMISOS - AMAYALAB
+   6 Diferenciadores
+   ============================================ */
+
+.compromisos {
+    padding: 6rem 2.5rem;
+    background: #FFFFFF;
+}
+
+.compromisos-contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ===== ENCABEZADO ===== */
+.compromisos-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.compromisos-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 129, 242, 0.06);
+    border: 1px solid rgba(15, 129, 242, 0.12);
+    color: #0F81F2;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.compromisos-titulo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0A5DB0;
+}
+
+.texto-resaltado {
+    color: #0F81F2;
+    position: relative;
+}
+
+.texto-resaltado::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(15, 129, 242, 0.15);
+    border-radius: 4px;
+    z-index: -1;
+}
+
+/* ===== GRID ===== */
+.compromisos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* ===== TARJETA ===== */
+.compromiso-card {
+    background: #F8F9FA;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.35s ease;
+    border: 1px solid transparent;
+}
+
+.compromiso-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(15, 129, 242, 0.15);
+    box-shadow: 0 15px 35px rgba(15, 129, 242, 0.08);
+    background: #FFFFFF;
+}
+
+/* ===== ÍCONO ===== */
+.compromiso-icono {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 129, 242, 0.06);
+    border-radius: 16px;
+    font-size: 1.5rem;
+    color: #0F81F2;
+    transition: all 0.35s ease;
+}
+
+.compromiso-card:hover .compromiso-icono {
+    background: #0F81F2;
+    color: #FFFFFF;
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(15, 129, 242, 0.3);
+}
+
+/* ===== TEXTO ===== */
+.compromiso-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0A5DB0;
+    margin-bottom: 0.5rem;
+}
+
+.compromiso-card p {
+    font-size: 0.85rem;
+    color: #5A6B7D;
+    line-height: 1.5;
+}
+
+/* ===== AOS ===== */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+[data-aos="fade-up"] { transform: translateY(40px); }
+[data-aos].aos-animate { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .compromisos {
+        padding: 4rem 1.5rem;
+    }
+    
+    .compromisos-titulo {
+        font-size: 1.9rem;
+    }
+    
+    .compromisos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .compromisos-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}

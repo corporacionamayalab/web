@@ -1,0 +1,406 @@
+/* ============================================
+   FOOTER PREMIUM - AMAYALAB
+   Diseño oscuro elegante con detalles azules
+   ============================================ */
+
+/* ========== FOOTER ========== */
+.footer {
+    position: relative;
+    background: linear-gradient(180deg, #0A1F3A 0%, #091A30 100%);
+    color: #FFFFFF;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem 4rem;
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr 0.9fr 1.2fr;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== COLUMNA MARCA ========== */
+.footer-logo-wrapper {
+    margin-bottom: 1.2rem;
+}
+
+.footer-logo {
+    width: 130px;
+    height: auto;
+    filter: brightness(1.1);
+}
+
+.footer-descripcion {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.footer-descripcion strong {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Redes sociales */
+.footer-redes {
+    display: flex;
+    gap: 10px;
+}
+
+.red-social {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+
+.red-social:hover {
+    background: #0F81F2;
+    border-color: #0F81F2;
+    color: #FFFFFF;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(15, 129, 242, 0.4);
+}
+
+/* ========== COLUMNAS DE LISTAS ========== */
+.footer-titulo {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 1.3rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.footer-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 3px;
+    background: #0F81F2;
+    border-radius: 3px;
+}
+
+.footer-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-lista li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-lista li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: all 0.3s ease;
+    padding: 4px 0;
+}
+
+.footer-lista li a i {
+    font-size: 0.6rem;
+    color: #0F81F2;
+    transition: transform 0.3s ease;
+}
+
+.footer-lista li a:hover {
+    color: #FFFFFF;
+    transform: translateX(5px);
+}
+
+.footer-lista li a:hover i {
+    transform: translateX(3px);
+}
+
+/* ========== COLUMNA CONTACTO ========== */
+.footer-contacto-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.2rem;
+}
+
+.contacto-icono {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 129, 242, 0.12);
+    border-radius: 10px;
+    color: #0F81F2;
+    font-size: 0.95rem;
+}
+
+.contacto-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.contacto-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.contacto-valor {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+a.contacto-valor:hover {
+    color: #0F81F2;
+}
+
+/* ========== BOTÓN WHATSAPP GRANDE ========== */
+.footer-whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #25D366;
+    padding: 16px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.footer-whatsapp-btn:hover {
+    background: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.45);
+}
+
+.footer-whatsapp-btn:hover::before {
+    left: 100%;
+}
+
+.whatsapp-btn-icono {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
+.whatsapp-btn-pulso {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: whatsappPulsoFooter 2s ease-in-out infinite;
+}
+
+.whatsapp-btn-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.whatsapp-btn-titulo {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.whatsapp-btn-subtitulo {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+}
+
+/* ========== BARRA INFERIOR ========== */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 0;
+}
+
+.footer-bottom-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-copy strong {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+
+.footer-hecho {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-hecho i {
+    color: #E74C3C;
+    animation: latidoCorazon 1.5s ease-in-out infinite;
+}
+
+/* ========== ANIMACIONES KEYFRAMES ========== */
+@keyframes whatsappPulsoFooter {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+@keyframes latidoCorazon {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.25); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.2); }
+    60% { transform: scale(1); }
+}
+
+/* ========== ANIMACIONES AOS ========== */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(40px);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 1080px) {
+    .footer-contenido {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+    
+    .footer-col-marca {
+        grid-column: 1 / -1;
+    }
+    
+    .footer-descripcion {
+        max-width: 500px;
+    }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.5rem 1.5rem 3rem;
+    }
+    
+    .footer-col-marca {
+        grid-column: auto;
+    }
+    
+    .footer-bottom-contenido {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem 1.5rem;
+    }
+    
+    .footer-titulo {
+        font-size: 1rem;
+    }
+    
+    .footer-logo {
+        width: 100px;
+    }
+    
+    .footer-whatsapp-btn {
+        padding: 14px 16px;
+    }
+    
+    .whatsapp-btn-icono {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 1.3rem;
+    }
+    
+    .whatsapp-btn-titulo {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-wave svg {
+        height: 50px;
+    }
+    
+    .footer-redes {
+        gap: 8px;
+    }
+    
+    .red-social {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+}

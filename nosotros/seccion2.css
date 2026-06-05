@@ -1,0 +1,249 @@
+/* ============================================
+   HISTORIA - AMAYALAB
+   Timeline desde 2023 hasta hoy
+   ============================================ */
+
+.historia {
+    padding: 6rem 2.5rem;
+    background: #FFFFFF;
+}
+
+.historia-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===== ENCABEZADO ===== */
+.historia-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.historia-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 129, 242, 0.06);
+    border: 1px solid rgba(15, 129, 242, 0.12);
+    color: #0F81F2;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.historia-titulo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0A5DB0;
+}
+
+.texto-resaltado {
+    color: #0F81F2;
+    position: relative;
+}
+
+.texto-resaltado::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(15, 129, 242, 0.15);
+    border-radius: 4px;
+    z-index: -1;
+}
+
+/* ===== TIMELINE ===== */
+.historia-timeline {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* ===== MARCADOR ===== */
+.timeline-marcador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 50px;
+}
+
+.marcador-punto {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 129, 242, 0.08);
+    border: 2px solid rgba(15, 129, 242, 0.2);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    color: #0F81F2;
+    transition: all 0.35s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.marcador-punto-actual {
+    background: linear-gradient(135deg, #0F81F2, #0A5DB0);
+    border-color: #0F81F2;
+    color: #FFFFFF;
+    box-shadow: 0 8px 25px rgba(15, 129, 242, 0.35);
+    animation: puntoActualPulso 2.5s ease-in-out infinite;
+}
+
+.marcador-linea {
+    width: 2px;
+    flex: 1;
+    min-height: 60px;
+    background: linear-gradient(180deg, rgba(15, 129, 242, 0.2), rgba(15, 129, 242, 0.05));
+    margin-top: 8px;
+}
+
+.timeline-item:last-child .marcador-linea {
+    display: none;
+}
+
+/* ===== CONTENIDO ===== */
+.timeline-contenido {
+    flex: 1;
+    padding-bottom: 1rem;
+}
+
+.timeline-fecha {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0F81F2;
+    background: rgba(15, 129, 242, 0.06);
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 0.6rem;
+}
+
+.timeline-fecha-actual {
+    background: linear-gradient(135deg, #0F81F2, #0A5DB0);
+    color: #FFFFFF;
+}
+
+.timeline-contenido h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0A5DB0;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-contenido p {
+    font-size: 0.92rem;
+    color: #5A6B7D;
+    line-height: 1.7;
+}
+
+.timeline-contenido p strong {
+    color: #2C3E50;
+    font-weight: 600;
+}
+
+/* ===== DATO DESTACADO ===== */
+.historia-dato-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(135deg, #F8F9FA, #FFFFFF);
+    border: 1px solid rgba(15, 129, 242, 0.08);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(15, 129, 242, 0.04);
+}
+
+.dato-card-icono {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0F81F2, #0A5DB0);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #FFFFFF;
+    box-shadow: 0 10px 25px rgba(15, 129, 242, 0.3);
+}
+
+.dato-card-texto h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0A5DB0;
+    margin-bottom: 0.5rem;
+}
+
+.dato-card-texto h3 span {
+    color: #0F81F2;
+}
+
+.dato-card-texto p {
+    font-size: 0.92rem;
+    color: #5A6B7D;
+    line-height: 1.6;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes puntoActualPulso {
+    0%, 100% { box-shadow: 0 8px 25px rgba(15, 129, 242, 0.35); }
+    50% { box-shadow: 0 8px 40px rgba(15, 129, 242, 0.6); }
+}
+
+/* ===== AOS ===== */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+[data-aos="fade-up"] { transform: translateY(40px); }
+[data-aos].aos-animate { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .historia {
+        padding: 4rem 1.5rem;
+    }
+    
+    .historia-titulo {
+        font-size: 1.9rem;
+    }
+    
+    .timeline-item {
+        gap: 1.2rem;
+    }
+    
+    .marcador-punto {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-contenido h3 {
+        font-size: 1rem;
+    }
+    
+    .historia-dato-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+}

@@ -1,0 +1,196 @@
+/* ============================================
+   TIEMPOS DE ENTREGA - AMAYALAB
+   3 Columnas: Rápido, Estándar, Especial
+   ============================================ */
+
+.tiempos-entrega {
+    padding: 5rem 2.5rem;
+    background: #FFFFFF;
+}
+
+.tiempos-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===== ENCABEZADO ===== */
+.tiempos-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tiempos-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 129, 242, 0.06);
+    border: 1px solid rgba(15, 129, 242, 0.12);
+    color: #0F81F2;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.tiempos-titulo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0A5DB0;
+}
+
+.texto-gradiente {
+    background: linear-gradient(135deg, #0F81F2, #0A5DB0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== GRID ===== */
+.tiempos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* ===== TARJETA ===== */
+.tiempo-card {
+    background: #F8F9FA;
+    border-radius: 24px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s ease;
+    border: 2px solid transparent;
+}
+
+.tiempo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(15, 129, 242, 0.1);
+}
+
+.tiempo-card-destacado {
+    background: #FFFFFF;
+    border-color: #0F81F2;
+    box-shadow: 0 15px 40px rgba(15, 129, 242, 0.1);
+}
+
+/* Badge "Más común" */
+.tiempo-badge-popular {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0F81F2;
+    color: #FFFFFF;
+    padding: 5px 16px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* ===== ÍCONOS ===== */
+.tiempo-icono {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    transition: all 0.35s ease;
+}
+
+.tiempo-icono-rapido {
+    background: rgba(37, 211, 102, 0.1);
+    color: #25D366;
+}
+
+.tiempo-icono-estandar {
+    background: rgba(15, 129, 242, 0.1);
+    color: #0F81F2;
+}
+
+.tiempo-icono-especial {
+    background: rgba(10, 93, 176, 0.1);
+    color: #0A5DB0;
+}
+
+.tiempo-card:hover .tiempo-icono {
+    transform: scale(1.1);
+}
+
+/* ===== NOMBRE ===== */
+.tiempo-nombre {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0A5DB0;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== HORAS (NÚMERO GRANDE) ===== */
+.tiempo-horas {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #2C3E50;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.tiempo-horas span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5A6B7D;
+}
+
+.tiempo-card-destacado .tiempo-horas {
+    color: #0F81F2;
+}
+
+/* ===== DESCRIPCIÓN ===== */
+.tiempo-descripcion {
+    font-size: 0.85rem;
+    color: #5A6B7D;
+    line-height: 1.4;
+}
+
+/* ===== AOS ===== */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(40px);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .tiempos-entrega {
+        padding: 4rem 1.5rem;
+    }
+    
+    .tiempos-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .tiempos-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .tiempo-horas {
+        font-size: 2.4rem;
+    }
+}

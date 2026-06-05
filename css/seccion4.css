@@ -1,0 +1,151 @@
+/* ============================================
+   CONVENIOS - AMAYALAB
+   Logos de laboratorios aliados
+   ============================================ */
+
+.convenios {
+    padding: 5rem 2.5rem;
+    background: #FFFFFF;
+}
+
+.convenios-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===== ENCABEZADO ===== */
+.convenios-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.convenios-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 129, 242, 0.06);
+    border: 1px solid rgba(15, 129, 242, 0.12);
+    color: #0F81F2;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.convenios-titulo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0A5DB0;
+}
+
+.texto-resaltado {
+    color: #0F81F2;
+    position: relative;
+}
+
+.texto-resaltado::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(15, 129, 242, 0.15);
+    border-radius: 4px;
+    z-index: -1;
+}
+
+/* ===== GRID DE LOGOS ===== */
+.convenios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+/* ===== ITEM ===== */
+.convenio-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: #F8F9FA;
+    border-radius: 20px;
+    border: 1px solid rgba(15, 129, 242, 0.04);
+    transition: all 0.35s ease;
+    cursor: default;
+}
+
+.convenio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(15, 129, 242, 0.1);
+    border-color: rgba(15, 129, 242, 0.15);
+    background: #FFFFFF;
+}
+
+.convenio-logo {
+    max-width: 130px;
+    max-height: 60px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.35s ease;
+}
+
+.convenio-item:hover .convenio-logo {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.08);
+}
+
+/* ===== AOS ===== */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+[data-aos="fade-up"] { transform: translateY(40px); }
+[data-aos].aos-animate { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .convenios {
+        padding: 4rem 1.5rem;
+    }
+    
+    .convenios-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .convenios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+    
+    .convenio-item {
+        padding: 1.2rem;
+    }
+    
+    .convenio-logo {
+        max-width: 100px;
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .convenios-grid {
+        gap: 1rem;
+    }
+    
+    .convenio-logo {
+        max-width: 80px;
+        max-height: 40px;
+    }
+}
+.convenios-subtitulo {
+    font-size: 1rem;
+    color: #5A6B7D;
+    max-width: 550px;
+    margin: 0.8rem auto 0;
+    line-height: 1.5;
+}
